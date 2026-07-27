@@ -6,6 +6,7 @@ import json
 import math
 import os
 import re
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -200,7 +201,40 @@ def get_headlines(limit: int = 8) -> list[dict[str, Any]]:
                     headlines.append(item)
         except Exception as exc:
             print(f"warning: news {symbol}: {exc}")
+    headlines.extend(get_spacex_headlines())
     return headlines[:limit]
+
+
+def get_spacex_headlines() -> list[dict[str, Any]]:
+    """Track material SpaceX headlines without pretending there is a stock quote."""
+    url = (
+        "https://news.google.com/rss/search"
+        "?q=SpaceX%20(site%3Aspacex.com%20OR%20site%3Areuters.com)"
+        "&hl=en-US&gl=US&ceid=US%3Aen"
+    )
+    try:
+        response = requests.get(url, timeout=12, headers={"User-Agent": "Markedspuls/1.0"})
+        response.raise_for_status()
+        root = ET.fromstring(response.content)
+        results = []
+        for item in root.findall("./channel/item")[:3]:
+            title = item.findtext("title")
+            link = item.findtext("link")
+            source = item.find("source")
+            if title and link:
+                results.append(
+                    {
+                        "title": re.sub(r"\s+", " ", title).strip(),
+                        "url": link,
+                        "source": source.text if source is not None else "SpaceX-nyhedsfeed",
+                        "published_at": item.findtext("pubDate"),
+                        "topic": "SpaceX",
+                    }
+                )
+        return results
+    except Exception as exc:
+        print(f"warning: SpaceX news: {exc}")
+        return []
 
 
 def nyse_status(now: datetime) -> dict[str, Any]:
