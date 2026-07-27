@@ -19,10 +19,7 @@ Indeks, futures, Asien, Europa, VIX, amerikansk 10-årig rente, valuta, olie,
 guld, Bitcoin og Ethereum hentes via Yahoo Finance. Watchlisten omfatter:
 
 `AAPL`, `MSFT`, `NVDA`, `AMZN`, `GOOGL`, `META`, `TSLA`, `COIN`, `MSTR`,
-`IONQ`, `QUBT`, `MP`, `RGTI` og `IREN`.
-
-SpaceX er ikke børsnoteret og behandles derfor kun som en privat
-selskabs-/nyhedsovervågning.
+`IONQ`, `QUBT`, `MP`, `RGTI`, `IREN` og `SPCX` (SpaceX).
 
 ## Transparente vurderingsregler
 
@@ -45,4 +42,3 @@ Yahoo Finance er en praktisk informationskilde, men ikke et garanteret
 professionelt realtidsfeed. Briefet markerer datatidspunkt og viser `n/a`, hvis
 en kilde ikke svarer. Nyhedsoverskrifter udvælges automatisk fra ticker-feeds;
 de fortolkes ikke af en sprogmodel.
-
