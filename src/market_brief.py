@@ -450,6 +450,70 @@ def market_reading(markets: dict[str, Quote]) -> str:
     return lead + (" " + ", mens ".join(context) + "." if context else "")
 
 
+def changes_since_morning(
+    kind: str, now: datetime, markets: dict[str, Quote]
+) -> list[dict[str, Any]]:
+    if kind != "premarket":
+        return []
+    date = now.astimezone(COPENHAGEN).strftime("%Y-%m-%d")
+    morning_path = DATA_DIR / "archive" / f"{date}-morning.json"
+    if not morning_path.exists():
+        return []
+    try:
+        morning = json.loads(morning_path.read_text(encoding="utf-8"))
+        old_instruments = morning.get("instruments", {})
+    except (OSError, json.JSONDecodeError):
+        return []
+
+    result: list[dict[str, Any]] = []
+    for name in [
+        "S&P futures",
+        "Nasdaq futures",
+        "Dow futures",
+        "VIX",
+        "USA 10-årig",
+        "Bitcoin",
+        "Ethereum",
+    ]:
+        current = markets.get(name)
+        old_price = finite((old_instruments.get(name) or {}).get("price"))
+        if not current or current.price is None or old_price in (None, 0):
+            continue
+        if name == "USA 10-årig":
+            delta = (current.price - old_price) * 100
+            unit = "bp"
+        elif name == "VIX":
+            delta = current.price - old_price
+            unit = "point"
+        else:
+            delta = (current.price / old_price - 1) * 100
+            unit = "%"
+        result.append(
+            {
+                "name": name,
+                "morning": old_price,
+                "current": current.price,
+                "delta": delta,
+                "unit": unit,
+            }
+        )
+    return result
+
+
+def change_line(item: dict[str, Any]) -> str:
+    delta = finite(item.get("delta"))
+    if delta is None:
+        return f"**{item.get('name')}:** n/a"
+    unit = item.get("unit")
+    if unit == "bp":
+        rendered = f"{delta:+.1f} bp".replace(".", ",")
+    elif unit == "point":
+        rendered = f"{delta:+.2f} point".replace(".", ",")
+    else:
+        rendered = f"{delta:+.2f}%".replace(".", ",")
+    return f"**{item.get('name')}:** {rendered} siden morgenbriefet"
+
+
 def top_movers(watchlist: dict[str, Quote], count: int = 5) -> list[tuple[str, Quote]]:
     valid = [(name, item) for name, item in watchlist.items() if item.change_pct is not None]
     return sorted(valid, key=lambda pair: abs(pair[1].change_pct or 0), reverse=True)[:count]
@@ -471,6 +535,7 @@ def make_discord_text(
     watchlist: dict[str, Quote],
     assessment: dict[str, Any],
     headlines: list[dict[str, Any]],
+    morning_changes: list[dict[str, Any]],
 ) -> str:
     stamp = now.astimezone(COPENHAGEN).strftime("%d.%m.%Y kl. %H:%M %Z")
     title = brief_title(kind)
@@ -488,6 +553,14 @@ def make_discord_text(
         sections.extend([
             "## Det vigtigste siden morgenbriefet",
             market_reading(markets),
+        ])
+        if morning_changes:
+            sections.extend([f"- {change_line(item)}" for item in morning_changes])
+        else:
+            sections.append(
+                "Der findes endnu ikke et kvalitetssikret morgen-snapshot fra samme handelsdag."
+            )
+        sections.extend([
             "",
             "## Futures",
             f"- **S&P 500-futures:** {move(markets.get('S&P futures'))}",
@@ -630,7 +703,17 @@ def main() -> None:
     watchlist = get_quotes(WATCHLIST)
     headlines = get_headlines()
     assessment = risk_assessment(markets)
-    text = make_discord_text(args.brief, now, status, markets, watchlist, assessment, headlines)
+    morning_changes = changes_since_morning(args.brief, now, markets)
+    text = make_discord_text(
+        args.brief,
+        now,
+        status,
+        markets,
+        watchlist,
+        assessment,
+        headlines,
+        morning_changes,
+    )
 
     payload = {
         "feed_version": 2,
@@ -641,6 +724,7 @@ def main() -> None:
         "market_calendar": status,
         "market_regime": assessment["regime"],
         "risk_assessment": assessment,
+        "changes_since_morning": morning_changes,
         "instruments": serialise_quotes(markets),
         "watchlist": serialise_quotes(watchlist),
         "headlines": headlines,
