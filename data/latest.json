@@ -1,7 +1,8 @@
 {
+  "feed_version": 2,
   "status": "ok",
-  "updated_at": "2026-07-27T11:05:32.813940+00:00",
-  "updated_at_copenhagen": "2026-07-27T13:05:32.813940+02:00",
+  "updated_at": "2026-07-27T12:35:45.926448+00:00",
+  "updated_at_copenhagen": "2026-07-27T14:35:45.926448+02:00",
   "brief_type": "premarket",
   "market_calendar": {
     "open": true,
@@ -19,30 +20,31 @@
       "Europæiske aktier deltager i fremgangen"
     ]
   },
+  "changes_since_morning": [],
   "instruments": {
     "S&P 500": {
       "symbol": "^GSPC",
-      "price": 7411.97998046875,
-      "change_pct": 0.04967638835191579,
-      "previous_close": 7408.2998046875,
+      "price": 7408.2998046875,
+      "change_pct": -1.2089697334330851,
+      "previous_close": 7498.9599609375,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Nasdaq": {
       "symbol": "^IXIC",
-      "price": 24975.8203125,
-      "change_pct": -0.6439300673470538,
-      "previous_close": 25137.689453125,
+      "price": 25137.689453125,
+      "change_pct": -2.153334173145116,
+      "previous_close": 25690.900390625,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Dow Jones": {
       "symbol": "^DJI",
-      "price": 51947.25,
-      "change_pct": 0.4556063664935328,
-      "previous_close": 51711.6484375,
+      "price": 51711.6484375,
+      "change_pct": -0.970784164759364,
+      "previous_close": 52218.578125,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "VIX": {
       "symbol": "^VIX",
@@ -54,248 +56,254 @@
     },
     "S&P futures": {
       "symbol": "ES=F",
-      "price": 7523.75,
-      "change_pct": 1.0238335011748978,
+      "price": 7507.5,
+      "change_pct": 0.8056394763343411,
       "previous_close": 7447.5,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Nasdaq futures": {
       "symbol": "NQ=F",
-      "price": 28753.25,
-      "change_pct": 1.6653554791432823,
+      "price": 28639.25,
+      "change_pct": 1.2622758090321762,
       "previous_close": 28282.25,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Dow futures": {
       "symbol": "YM=F",
-      "price": 52713.0,
-      "change_pct": 1.1299976977975579,
+      "price": 52703.0,
+      "change_pct": 1.110812677461448,
       "previous_close": 52124.0,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
-      "price": 6367.85009765625,
-      "change_pct": 1.3837125822053542,
-      "previous_close": 6280.93994140625,
+      "price": 6354.1298828125,
+      "change_pct": 2.318132398123418,
+      "previous_close": 6210.169921875,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "DAX": {
       "symbol": "^GDAXI",
-      "price": 25518.189453125,
-      "change_pct": 1.6701440420933134,
-      "previous_close": 25099.0,
+      "price": 25485.220703125,
+      "change_pct": 2.9160363781288057,
+      "previous_close": 24763.119140625,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Nikkei 225": {
       "symbol": "^N225",
       "price": 64931.19140625,
-      "change_pct": 0.4953370687406755,
-      "previous_close": 64611.1484375,
+      "change_pct": -2.2453353544827137,
+      "previous_close": 66422.6015625,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Hang Seng": {
       "symbol": "^HSI",
       "price": 25207.1796875,
-      "change_pct": 0.9772341726980605,
-      "previous_close": 24963.23046875,
+      "change_pct": -0.01440199381232965,
+      "previous_close": 25210.810546875,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Shanghai Composite": {
       "symbol": "000001.SS",
       "price": 3858.2451171875,
-      "change_pct": 1.1548199428341288,
-      "previous_close": 3814.197998046875,
+      "change_pct": -0.4780254821393326,
+      "previous_close": 3876.777099609375,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "USA 10-årig": {
       "symbol": "^TNX",
-      "price": 4.678999900817871,
+      "price": 4.647000312805176,
       "change_pct": 0.0,
-      "previous_close": 4.678999900817871,
+      "previous_close": 4.647000312805176,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.707531+00:00"
+      "timestamp": "2026-07-27T12:35:46.825239+00:00"
     },
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "price": 1.1397310495376587,
-      "change_pct": 0.18007934346588872,
+      "price": 1.1386927366256714,
+      "change_pct": 0.088813715536884,
       "previous_close": 1.137682318687439,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Dollarindeks": {
       "symbol": "DX-Y.NYB",
-      "price": 101.26499938964844,
-      "change_pct": -0.2020319587942021,
-      "previous_close": 101.47000122070312,
+      "price": 101.37999725341797,
+      "change_pct": -0.049298088935589846,
+      "previous_close": 101.43000030517578,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "WTI-olie": {
       "symbol": "CL=F",
-      "price": 82.97000122070312,
-      "change_pct": -7.098865201212368,
+      "price": 84.01000213623047,
+      "change_pct": -5.934380883714729,
       "previous_close": 89.30999755859375,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Guld": {
       "symbol": "GC=F",
-      "price": 4104.60009765625,
-      "change_pct": 0.90962727681414,
+      "price": 4087.10009765625,
+      "change_pct": 0.47939815940205577,
       "previous_close": 4067.60009765625,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Bitcoin": {
       "symbol": "BTC-USD",
-      "price": 65228.94140625,
-      "change_pct": -0.1704298475343924,
+      "price": 64839.96875,
+      "change_pct": -0.7657326722829816,
       "previous_close": 65340.30078125,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     },
     "Ethereum": {
       "symbol": "ETH-USD",
-      "price": 1963.219970703125,
-      "change_pct": 0.5021326561825745,
+      "price": 1944.77001953125,
+      "change_pct": -0.4423664156722018,
       "previous_close": 1953.4112548828125,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:33.635924+00:00"
+      "timestamp": "2026-07-27T12:35:46.750029+00:00"
     }
   },
   "watchlist": {
     "Apple": {
       "symbol": "AAPL",
-      "price": 333.0199890136719,
-      "change_pct": 3.5316748188238156,
-      "previous_close": 321.6600036621094,
+      "price": 321.6600036621094,
+      "change_pct": -1.2979872951588756,
+      "previous_close": 325.8900146484375,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Microsoft": {
       "symbol": "MSFT",
-      "price": 381.70001220703125,
-      "change_pct": 0.03145490827332065,
-      "previous_close": 381.5799865722656,
+      "price": 381.5799865722656,
+      "change_pct": -2.2441998892785864,
+      "previous_close": 390.3399963378906,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Nvidia": {
       "symbol": "NVDA",
-      "price": 206.83999633789062,
-      "change_pct": -0.9197155678610791,
-      "previous_close": 208.75999450683594,
+      "price": 208.75999450683594,
+      "change_pct": -1.556164807012217,
+      "previous_close": 212.05999755859375,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Amazon": {
       "symbol": "AMZN",
-      "price": 232.11000061035156,
-      "change_pct": -0.6633583101364859,
-      "previous_close": 233.66000366210938,
+      "price": 233.66000366210938,
+      "change_pct": -4.570145869906749,
+      "previous_close": 244.85000610351562,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Alphabet": {
       "symbol": "GOOGL",
-      "price": 319.739990234375,
-      "change_pct": 0.6452792902561733,
-      "previous_close": 317.69000244140625,
+      "price": 317.69000244140625,
+      "change_pct": -7.13262420932762,
+      "previous_close": 342.0899963378906,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Meta": {
       "symbol": "META",
-      "price": 595.1900024414062,
-      "change_pct": -1.8000286394970089,
-      "previous_close": 606.0999755859375,
+      "price": 606.0999755859375,
+      "change_pct": -3.3595369514419327,
+      "previous_close": 627.1699829101562,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Tesla": {
       "symbol": "TSLA",
-      "price": 313.0299987792969,
-      "change_pct": -2.0832692956452514,
-      "previous_close": 319.69000244140625,
+      "price": 319.69000244140625,
+      "change_pct": -14.523677416617442,
+      "previous_close": 374.010009765625,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Coinbase": {
       "symbol": "COIN",
-      "price": 158.2899932861328,
-      "change_pct": -1.780845315686308,
-      "previous_close": 161.16000366210938,
+      "price": 161.16000366210938,
+      "change_pct": -2.9857883462970025,
+      "previous_close": 166.1199951171875,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Strategy": {
       "symbol": "MSTR",
-      "price": 91.66999816894531,
-      "change_pct": -2.0933452333313007,
-      "previous_close": 93.62999725341797,
+      "price": 93.62999725341797,
+      "change_pct": -6.379366809853537,
+      "previous_close": 100.01000213623047,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "IonQ": {
       "symbol": "IONQ",
-      "price": 32.84000015258789,
-      "change_pct": -3.6102129534893557,
-      "previous_close": 34.06999969482422,
+      "price": 34.06999969482422,
+      "change_pct": -1.758940614139859,
+      "previous_close": 34.68000030517578,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Quantum Computing": {
       "symbol": "QUBT",
-      "price": 7.429999828338623,
-      "change_pct": -5.470741703200421,
-      "previous_close": 7.860000133514404,
+      "price": 7.860000133514404,
+      "change_pct": -0.6321076468043585,
+      "previous_close": 7.909999847412109,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "MP Materials": {
       "symbol": "MP",
-      "price": 41.29999923706055,
-      "change_pct": -7.502804421802123,
-      "previous_close": 44.650001525878906,
+      "price": 44.650001525878906,
+      "change_pct": -2.2548134247279528,
+      "previous_close": 45.68000030517578,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "Rigetti": {
       "symbol": "RGTI",
-      "price": 14.149999618530273,
-      "change_pct": -4.713809730354857,
-      "previous_close": 14.850000381469727,
+      "price": 14.850000381469727,
+      "change_pct": -2.495070073461103,
+      "previous_close": 15.229999542236328,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "IREN": {
       "symbol": "IREN",
-      "price": 37.06999969482422,
-      "change_pct": -8.64958594837807,
-      "previous_close": 40.58000183105469,
+      "price": 40.58000183105469,
+      "change_pct": -1.6957290914292766,
+      "previous_close": 41.279998779296875,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     },
     "SpaceX": {
       "symbol": "SPCX",
-      "price": 115.06999969482422,
-      "change_pct": -2.6809863212257756,
-      "previous_close": 118.23999786376953,
+      "price": 118.23999786376953,
+      "change_pct": 2.585455207624321,
+      "previous_close": 115.26000213623047,
       "currency": null,
-      "timestamp": "2026-07-27T11:05:34.326364+00:00"
+      "timestamp": "2026-07-27T12:35:47.733103+00:00"
     }
   },
   "headlines": [
+    {
+      "title": "Earnings live: AstraZeneca stock rises to kick off a busy earnings week",
+      "url": "https://finance.yahoo.com/markets/live/earnings-live-astrazeneca-stock-rises-to-kick-off-a-busy-earnings-week-115207214.html",
+      "source": "Yahoo Finance",
+      "published_at": "2026-07-27T11:52:07Z"
+    },
     {
       "title": "Corporate America is the most optimistic it's been in 15 years — but the market's still stuck: Chart of the Day",
       "url": "https://finance.yahoo.com/markets/article/corporate-america-is-the-most-optimistic-its-been-in-15-years--but-the-markets-still-stuck-chart-of-the-day-121054259.html",
@@ -303,49 +311,43 @@
       "published_at": "2026-07-26T12:10:54Z"
     },
     {
-      "title": "4 Big Tech earnings reports, a Fed meeting, and $100 oil: It's the busiest week of the quarter",
-      "url": "https://finance.yahoo.com/markets/article/4-big-tech-earnings-reports-a-fed-meeting-and-100-oil-its-the-busiest-week-of-the-quarter-100000261.html",
-      "source": "Yahoo Finance",
-      "published_at": "2026-07-26T10:00:00Z"
+      "title": "1 Industrials Stock with Impressive Fundamentals and 2 We Turn Down",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/1-industrials-stock-impressive-fundamentals-122102166.html",
+      "source": "StockStory",
+      "published_at": "2026-07-27T12:21:02Z"
     },
     {
-      "title": "US Equity Investors to Focus on Mag-7 Earnings, Fed Policy Statements This Week as Halted Iran Strikes Make Way for Diplomacy",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-investors-focus-mag-095700133.html",
-      "source": "MT Newswires",
-      "published_at": "2026-07-27T09:57:00Z"
+      "title": "Jensen Quality Growth Equity Strategy Trimmed Its Position in Broadridge Financial Solutions (BR)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-quality-growth-equity-strategy-121804668.html",
+      "source": "Insider Monkey",
+      "published_at": "2026-07-27T12:18:04Z"
     },
     {
-      "title": "U.S. markets eye earnings season as Middle East tensions ease: Dow Jones, S&P, Nasdaq, Wall Street Futures",
-      "url": "https://investorshub.advfn.com/market-news/article/32676/u-s-markets-eye-earnings-season-as-middle-east-tensions-ease-dow-jones-sp-nasdaq-wall-street-futures",
-      "source": "InvestorsHub",
-      "published_at": "2026-07-27T09:53:26Z"
+      "title": "3 Industrials Stocks with Exciting Potential",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/3-industrials-stocks-exciting-potential-121302581.html",
+      "source": "StockStory",
+      "published_at": "2026-07-27T12:13:02Z"
     },
     {
-      "title": "If I Could Tell Every Investor 1 Thing About the Next Bear Market, It's This",
-      "url": "https://www.fool.com/investing/2026/07/27/if-i-could-tell-every-investor-1-thing-about-the-n/",
-      "source": "Motley Fool",
-      "published_at": "2026-07-27T09:50:00Z"
+      "title": "Cintas Corporation (CTAS) Looks Attractive After Weak Share Performance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/cintas-corporation-ctas-looks-attractive-121124131.html",
+      "source": "Insider Monkey",
+      "published_at": "2026-07-27T12:11:24Z"
     },
     {
-      "title": "Why Cleveland-Cliffs Stock Jumped Despite Its Latest Quarterly Loss",
-      "url": "https://www.trefis.com/articles/608971/why-cleveland-cliffs-stock-jumped-despite-its-latest-quarterly-loss/2026-07-27",
-      "source": "Trefis",
-      "published_at": "2026-07-27T09:14:20Z"
+      "title": "AI-linked shares rally; energy cos fall premarket",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ai-linked-shares-rally-energy-120916336.html",
+      "source": "Investing.com",
+      "published_at": "2026-07-27T12:09:16Z"
     },
     {
-      "title": "Booz Allen Soared On A Beat, Not A Boom",
-      "url": "https://www.trefis.com/articles/608972/booz-allen-soared-on-a-beat-not-a-boom/2026-07-27",
-      "source": "Trefis",
-      "published_at": "2026-07-27T09:14:19Z"
-    },
-    {
-      "title": "If I Only Had $500 to Invest, This Is the ETF I'd Buy Right Now",
-      "url": "https://www.fool.com/investing/2026/07/27/if-i-only-had-500-to-invest-this-is-the-etf-id-buy/",
-      "source": "Motley Fool",
-      "published_at": "2026-07-27T09:04:00Z"
+      "title": "Alphabet (GOOG) Gained on Strong Cloud Growth and Easing AI Search Concerns",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-inc-goog-gained-strong-120636126.html",
+      "source": "Insider Monkey",
+      "published_at": "2026-07-27T12:06:36Z"
     }
   ],
-  "discord_text": "# USA premarket — mandag 27.07.2026\n**Data kontrolleret 27.07.2026 kl. 13:05 CEST.**\n\n## Det vigtigste siden morgenbriefet\nAmerikanske futures peger på en tydeligt positiv åbning. Det markante oliefald reducerer det kortsigtede inflationspres.\n\n## Futures\n- **S&P 500-futures:** 7.523,75 (+1,02%)\n- **Nasdaq 100-futures:** 28.753,25 (+1,67%)\n- **Dow-futures:** 52.713,00 (+1,13%)\n\n## Europa\n- **Euro Stoxx 50:** 6.367,85 (+1,38%)\n- **DAX:** 25.518,19 (+1,67%)\n\n## Renter, VIX, olie og valuta\n- **10-årig Treasury:** 4,68% (+0,0 bp)\n- **VIX:** 18,58 (-0,64%)\n- **WTI:** 82,97 (-7,10%)\n- **EUR/USD:** 1,14 (+0,18%)\n\n## Krypto\n- **Bitcoin:** 65.228,94 (-0,17%)\n- **Ethereum:** 1.963,22 (+0,50%)\nDer er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.\n\n## Watchlist — seneste officielle lukning\nDisse er **ikke verificerede premarket-kurser**: IREN -8.65% · MP -7.50% · QUBT -5.47% · RGTI -4.71% · IONQ -3.61%\n\n## Udvalgte markedsoverskrifter\n• [Corporate America is the most optimistic it's been in 15 years — but the market's still stuck: Chart of the Day](https://finance.yahoo.com/markets/article/corporate-america-is-the-most-optimistic-its-been-in-15-years--but-the-markets-still-stuck-chart-of-the-day-121054259.html) — Yahoo Finance\n• [4 Big Tech earnings reports, a Fed meeting, and $100 oil: It's the busiest week of the quarter](https://finance.yahoo.com/markets/article/4-big-tech-earnings-reports-a-fed-meeting-and-100-oil-its-the-busiest-week-of-the-quarter-100000261.html) — Yahoo Finance\n• [US Equity Investors to Focus on Mag-7 Earnings, Fed Policy Statements This Week as Halted Iran Strikes Make Way for Diplomacy](https://finance.yahoo.com/markets/stocks/articles/us-equity-investors-focus-mag-095700133.html) — MT Newswires\n\n## Forventning: **Forsigtigt risk-on**\n**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er +4.\n**Vurdering:** Amerikanske futures peger på en tydeligt positiv åbning. Det markante oliefald reducerer det kortsigtede inflationspres.\n\n### Tre forhold at overvåge\n1. Om futuresbevægelsen holder efter den amerikanske åbning.\n2. Om olie og den 10-årige rente fortsætter i samme retning.\n3. Om markedsbredden bekræfter indeksbevægelsen.\n\n_SpaceX indgår i watchlisten som SPCX._",
+  "discord_text": "# USA premarket — mandag 27.07.2026\n**Data kontrolleret 27.07.2026 kl. 14:35 CEST.**\n\n## Det vigtigste siden morgenbriefet\nAmerikanske futures peger på en tydeligt positiv åbning. Det markante oliefald reducerer det kortsigtede inflationspres.\nDer findes endnu ikke et kvalitetssikret morgen-snapshot fra samme handelsdag.\n\n## Futures\n- **S&P 500-futures:** 7.507,50 (+0,81%)\n- **Nasdaq 100-futures:** 28.639,25 (+1,26%)\n- **Dow-futures:** 52.703,00 (+1,11%)\n\n## Europa\n- **Euro Stoxx 50:** 6.354,13 (+2,32%)\n- **DAX:** 25.485,22 (+2,92%)\n\n## Renter, VIX, olie og valuta\n- **10-årig Treasury:** 4,65% (+0,0 bp)\n- **VIX:** 18,58 (-0,64%)\n- **WTI:** 84,01 (-5,93%)\n- **EUR/USD:** 1,14 (+0,09%)\n\n## Krypto\n- **Bitcoin:** 64.839,97 (-0,77%)\n- **Ethereum:** 1.944,77 (-0,44%)\nDer er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.\n\n## Watchlist — seneste officielle lukning\nDisse er **ikke verificerede premarket-kurser**: TSLA -14.52% · GOOGL -7.13% · MSTR -6.38% · AMZN -4.57% · META -3.36%\n\n## Udvalgte markedsoverskrifter\n• [Earnings live: AstraZeneca stock rises to kick off a busy earnings week](https://finance.yahoo.com/markets/live/earnings-live-astrazeneca-stock-rises-to-kick-off-a-busy-earnings-week-115207214.html) — Yahoo Finance\n• [Corporate America is the most optimistic it's been in 15 years — but the market's still stuck: Chart of the Day](https://finance.yahoo.com/markets/article/corporate-america-is-the-most-optimistic-its-been-in-15-years--but-the-markets-still-stuck-chart-of-the-day-121054259.html) — Yahoo Finance\n\n## Forventning: **Forsigtigt risk-on**\n**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er +4.\n**Vurdering:** Amerikanske futures peger på en tydeligt positiv åbning. Det markante oliefald reducerer det kortsigtede inflationspres.\n\n### Tre forhold at overvåge\n1. Om futuresbevægelsen holder efter den amerikanske åbning.\n2. Om olie og den 10-årige rente fortsætter i samme retning.\n3. Om markedsbredden bekræfter indeksbevægelsen.\n\n_SpaceX indgår i watchlisten som SPCX._",
   "methodology": {
     "facts": "Kurser og procentændringer hentes maskinelt via Yahoo Finance.",
     "assessment": "Risk-regimet beregnes ud fra faste tærskler for futures, VIX, Bitcoin og olie."
