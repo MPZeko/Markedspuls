@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from io import StringIO
 import json
 import math
 import os
@@ -60,9 +62,10 @@ WATCHLIST = {
     "MP Materials": "MP",
     "Rigetti": "RGTI",
     "IREN": "IREN",
+    "SpaceX": "SPCX",
 }
 
-NEWS_TICKERS = ["^GSPC", "BTC-USD", "ETH-USD", "COIN", "MSTR", "NVDA", "GOOGL"]
+NEWS_TICKERS = ["^GSPC", "BTC-USD", "ETH-USD", "COIN", "MSTR", "NVDA", "GOOGL", "SPCX"]
 
 
 @dataclass
@@ -159,6 +162,71 @@ def get_quotes(items: dict[str, str]) -> dict[str, Quote]:
     return result
 
 
+def get_intraday_quote(symbol: str, fallback: Quote) -> Quote:
+    """Use an intraday bar for instruments that trade before the US equity open."""
+    try:
+        downloaded = yf.download(
+            tickers=symbol,
+            period="1d",
+            interval="5m",
+            prepost=True,
+            auto_adjust=False,
+            progress=False,
+            threads=False,
+            timeout=15,
+        )
+        closes = downloaded["Close"].dropna()
+        if hasattr(closes, "columns"):
+            closes = closes.iloc[:, 0]
+        price = finite(closes.iloc[-1]) if len(closes) else None
+        if price is None:
+            return fallback
+        previous = fallback.price
+        change = None
+        if previous not in (None, 0):
+            change = (price / previous - 1) * 100
+        return Quote(
+            symbol=symbol,
+            price=price,
+            change_pct=change,
+            previous_close=previous,
+            currency=fallback.currency,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )
+    except Exception as exc:
+        print(f"warning: intraday {symbol}: {exc}")
+        return fallback
+
+
+def get_official_vix(fallback: Quote) -> Quote:
+    """Use Cboe's official VIX history instead of treating a stale Yahoo row as live."""
+    url = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+    try:
+        response = requests.get(url, timeout=15, headers={"User-Agent": "Markedspuls/1.0"})
+        response.raise_for_status()
+        rows = list(csv.DictReader(StringIO(response.text)))
+        if not rows:
+            return fallback
+        latest = rows[-1]
+        previous_row = rows[-2] if len(rows) > 1 else None
+        price = finite(latest.get("CLOSE"))
+        previous = finite(previous_row.get("CLOSE")) if previous_row else None
+        change = None
+        if price is not None and previous not in (None, 0):
+            change = (price / previous - 1) * 100
+        return Quote(
+            symbol="^VIX",
+            price=price,
+            change_pct=change,
+            previous_close=previous,
+            currency=None,
+            timestamp=f"{latest.get('DATE')}T20:00:00+00:00",
+        )
+    except Exception as exc:
+        print(f"warning: official VIX: {exc}")
+        return fallback
+
+
 def extract_news_item(raw: dict[str, Any]) -> dict[str, Any] | None:
     content = raw.get("content") or raw
     title = content.get("title")
@@ -206,7 +274,7 @@ def get_headlines(limit: int = 8) -> list[dict[str, Any]]:
 
 
 def get_spacex_headlines() -> list[dict[str, Any]]:
-    """Track material SpaceX headlines without pretending there is a stock quote."""
+    """Track material headlines for the now-public SpaceX ticker SPCX."""
     url = (
         "https://news.google.com/rss/search"
         "?q=SpaceX%20(site%3Aspacex.com%20OR%20site%3Areuters.com)"
@@ -500,7 +568,7 @@ def make_discord_text(
         "2. Om olie og den 10-årige rente fortsætter i samme retning.",
         "3. Om markedsbredden bekræfter indeksbevægelsen.",
         "",
-        "_SpaceX følges som unoteret selskabsnyhed; der findes ingen offentlig SpaceX-aktiekurs._",
+        "_SpaceX indgår i watchlisten som SPCX._",
     ])
     return "\n".join(sections)
 
@@ -557,6 +625,8 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     status = nyse_status(now)
     markets = get_quotes(MARKETS)
+    markets["USA 10-årig"] = get_intraday_quote("^TNX", markets["USA 10-årig"])
+    markets["VIX"] = get_official_vix(markets["VIX"])
     watchlist = get_quotes(WATCHLIST)
     headlines = get_headlines()
     assessment = risk_assessment(markets)
@@ -572,7 +642,6 @@ def main() -> None:
         "risk_assessment": assessment,
         "instruments": serialise_quotes(markets),
         "watchlist": serialise_quotes(watchlist),
-        "private_company_watch": ["SpaceX"],
         "headlines": headlines,
         "discord_text": text,
         "methodology": {
