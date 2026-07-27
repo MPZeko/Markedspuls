@@ -633,6 +633,7 @@ def main() -> None:
     text = make_discord_text(args.brief, now, status, markets, watchlist, assessment, headlines)
 
     payload = {
+        "feed_version": 2,
         "status": "ok",
         "updated_at": now.isoformat(),
         "updated_at_copenhagen": now.astimezone(COPENHAGEN).isoformat(),
