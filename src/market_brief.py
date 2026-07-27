@@ -266,6 +266,8 @@ def risk_assessment(quotes: dict[str, Quote]) -> dict[str, Any]:
     vix = quotes.get("VIX")
     btc = pct(quotes, "Bitcoin")
     oil = pct(quotes, "WTI-olie")
+    rate = quotes.get("USA 10-årig")
+    europe = pct(quotes, "Euro Stoxx 50")
 
     for label, value in [("S&P-futures", sp), ("Nasdaq-futures", nq)]:
         if value is not None:
@@ -298,8 +300,28 @@ def risk_assessment(quotes: dict[str, Quote]) -> dict[str, Any]:
     if oil is not None and oil >= 4:
         score -= 1
         drivers.append("Kraftig olieprisbevægelse øger inflationsrisikoen")
+    elif oil is not None and oil <= -4:
+        score += 1
+        drivers.append("Lavere olie dæmper det kortsigtede inflationspres")
 
-    regime = "risk-on" if score >= 2 else "risk-off" if score <= -2 else "neutral"
+    if rate and rate.price is not None and rate.previous_close is not None:
+        rate_bp = (rate.price - rate.previous_close) * 100
+        if rate_bp >= 5:
+            score -= 1
+            drivers.append("Den 10-årige rente stiger mindst 5 bp")
+        elif rate_bp <= -5:
+            score += 1
+            drivers.append("Den 10-årige rente falder mindst 5 bp")
+
+    if europe is not None:
+        if europe >= 1:
+            score += 1
+            drivers.append("Europæiske aktier deltager i fremgangen")
+        elif europe <= -1:
+            score -= 1
+            drivers.append("Europæiske aktier er under bredt pres")
+
+    regime = "risk-on" if score >= 3 else "risk-off" if score <= -3 else "neutral"
     return {"regime": regime, "score": score, "drivers": drivers[:4]}
 
 
@@ -312,6 +334,52 @@ def move(item: Quote | None) -> str:
         return "n/a"
     sign = "+" if item.change_pct is not None and item.change_pct >= 0 else ""
     return f"{fmt(item.price)} ({sign}{fmt(item.change_pct)}%)"
+
+
+def yield_move(item: Quote | None) -> str:
+    if item is None or item.price is None:
+        return "n/a"
+    bp = None
+    if item.previous_close is not None:
+        bp = (item.price - item.previous_close) * 100
+    bp_text = "n/a" if bp is None else f"{bp:+.1f} bp".replace(".", ",")
+    return f"{fmt(item.price)}% ({bp_text})"
+
+
+def weekday_date(now: datetime) -> str:
+    weekdays = ["mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag", "søndag"]
+    local = now.astimezone(COPENHAGEN)
+    return f"{weekdays[local.weekday()]} {local.strftime('%d.%m.%Y')}"
+
+
+def market_reading(markets: dict[str, Quote]) -> str:
+    sp = pct(markets, "S&P futures")
+    nq = pct(markets, "Nasdaq futures")
+    oil = pct(markets, "WTI-olie")
+    rate = markets.get("USA 10-årig")
+    rate_bp = None
+    if rate and rate.price is not None and rate.previous_close is not None:
+        rate_bp = (rate.price - rate.previous_close) * 100
+
+    if sp is not None and nq is not None and sp > 0.5 and nq > 0.5:
+        lead = "Amerikanske futures peger på en tydeligt positiv åbning."
+    elif sp is not None and sp > 0:
+        lead = "Amerikanske futures peger svagt op, men signalet er foreløbig begrænset."
+    elif sp is not None and sp < -0.5:
+        lead = "Amerikanske futures peger på en svag åbning og lavere risikovillighed."
+    else:
+        lead = "Amerikanske futures ligger tæt på uændret."
+
+    context = []
+    if oil is not None and oil <= -4:
+        context.append("Det markante oliefald reducerer det kortsigtede inflationspres")
+    elif oil is not None and oil >= 4:
+        context.append("Den kraftige oliestigning øger inflations- og renterisikoen")
+    if rate_bp is not None and rate_bp >= 3:
+        context.append("stigende lange renter begrænser dog kvaliteten af risk-on-signalet")
+    elif rate_bp is not None and rate_bp <= -3:
+        context.append("faldende lange renter understøtter især vækstaktier")
+    return lead + (" " + ", mens ".join(context) + "." if context else "")
 
 
 def top_movers(watchlist: dict[str, Quote], count: int = 5) -> list[tuple[str, Quote]]:
@@ -341,77 +409,129 @@ def make_discord_text(
     if not status["open"]:
         return f"## {title}\n**{stamp}**\n\n🇺🇸 {status['reason']}\nKort opdatering: Ingen normal amerikansk aktiehandel i dag."
 
-    sections = [
-        f"## {title}",
-        f"**Data hentet {stamp}**",
-        "",
-        f"**Samlet signal: {assessment['regime'].upper()}** (regelbaseret score {assessment['score']:+d})",
-    ]
-    if assessment["drivers"]:
-        sections.append(" • " + " · ".join(assessment["drivers"]))
+    call = {
+        "risk-on": "Forsigtigt risk-on",
+        "risk-off": "Forsigtigt risk-off",
+        "neutral": "Neutral",
+    }[assessment["regime"]]
+    sections = [f"# {title} — {weekday_date(now)}", f"**Data kontrolleret {stamp}.**", ""]
 
-    if kind == "morning":
+    if kind == "premarket":
         sections.extend([
+            "## Det vigtigste siden morgenbriefet",
+            market_reading(markets),
             "",
-            "**USA – seneste bevægelse**",
-            f"S&P 500 {move(markets.get('S&P 500'))} · Nasdaq {move(markets.get('Nasdaq'))} · Dow {move(markets.get('Dow Jones'))}",
+            "## Futures",
+            f"- **S&P 500-futures:** {move(markets.get('S&P futures'))}",
+            f"- **Nasdaq 100-futures:** {move(markets.get('Nasdaq futures'))}",
+            f"- **Dow-futures:** {move(markets.get('Dow futures'))}",
             "",
-            "**Asien**",
-            f"Nikkei {move(markets.get('Nikkei 225'))} · Hang Seng {move(markets.get('Hang Seng'))} · Shanghai {move(markets.get('Shanghai Composite'))}",
+            "## Europa",
+            f"- **Euro Stoxx 50:** {move(markets.get('Euro Stoxx 50'))}",
+            f"- **DAX:** {move(markets.get('DAX'))}",
         ])
-    elif kind == "premarket":
+    elif kind == "morning":
         sections.extend([
+            f"## Samlet signal: {call}",
+            market_reading(markets),
             "",
-            "**USA-futures**",
-            f"S&P {move(markets.get('S&P futures'))} · Nasdaq {move(markets.get('Nasdaq futures'))} · Dow {move(markets.get('Dow futures'))}",
+            "## Seneste amerikanske lukning",
+            f"- **S&P 500:** {move(markets.get('S&P 500'))}",
+            f"- **Nasdaq Composite:** {move(markets.get('Nasdaq'))}",
+            f"- **Dow Jones:** {move(markets.get('Dow Jones'))}",
             "",
-            "**Europa**",
-            f"Euro Stoxx 50 {move(markets.get('Euro Stoxx 50'))} · DAX {move(markets.get('DAX'))}",
+            "## Asien og amerikanske futures",
+            f"- **Nikkei 225:** {move(markets.get('Nikkei 225'))}",
+            f"- **Hang Seng:** {move(markets.get('Hang Seng'))}",
+            f"- **Shanghai Composite:** {move(markets.get('Shanghai Composite'))}",
+            f"- **S&P 500-futures:** {move(markets.get('S&P futures'))}",
+            f"- **Nasdaq 100-futures:** {move(markets.get('Nasdaq futures'))}",
         ])
     else:
         sections.extend([
+            f"## Samlet signal: {call}",
+            market_reading(markets),
             "",
-            "**USA**",
-            f"S&P 500 {move(markets.get('S&P 500'))} · Nasdaq {move(markets.get('Nasdaq'))} · Dow {move(markets.get('Dow Jones'))}",
+            "## USA ved lukning",
+            f"- **S&P 500:** {move(markets.get('S&P 500'))}",
+            f"- **Nasdaq Composite:** {move(markets.get('Nasdaq'))}",
+            f"- **Dow Jones:** {move(markets.get('Dow Jones'))}",
         ])
 
     sections.extend([
         "",
-        "**Tværgående signaler**",
-        f"VIX {move(markets.get('VIX'))} · USA 10-årig {move(markets.get('USA 10-årig'))} · WTI {move(markets.get('WTI-olie'))} · EUR/USD {move(markets.get('EUR/USD'))}",
+        "## Renter, VIX, olie og valuta",
+        f"- **10-årig Treasury:** {yield_move(markets.get('USA 10-årig'))}",
+        f"- **VIX:** {move(markets.get('VIX'))}",
+        f"- **WTI:** {move(markets.get('WTI-olie'))}",
+        f"- **EUR/USD:** {move(markets.get('EUR/USD'))}",
         "",
-        "**Krypto**",
-        f"Bitcoin {move(markets.get('Bitcoin'))} · Ethereum {move(markets.get('Ethereum'))}",
+        "## Krypto",
+        f"- **Bitcoin:** {move(markets.get('Bitcoin'))}",
+        f"- **Ethereum:** {move(markets.get('Ethereum'))}",
+        "Der er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.",
     ])
 
     movers = top_movers(watchlist)
     if movers:
-        sections.extend(["", "**Watchlist – største bevægelser**"])
-        sections.append(" · ".join(f"{item.symbol} {item.change_pct:+.2f}%" for _, item in movers))
+        sections.extend(["", "## Watchlist — seneste officielle lukning"])
+        sections.append(
+            "Disse er **ikke verificerede premarket-kurser**: "
+            + " · ".join(f"{item.symbol} {item.change_pct:+.2f}%" for _, item in movers)
+        )
 
     if headlines:
-        sections.extend(["", "**Udvalgte overskrifter – automatisk kildefeed**"])
-        for item in headlines[:4]:
+        sections.extend(["", "## Udvalgte markedsoverskrifter"])
+        approved = [
+            item for item in headlines
+            if item.get("source") in {"Reuters", "Yahoo Finance", "MT Newswires", "CoinDesk"}
+        ]
+        for item in approved[:3]:
             sections.append(f"• [{item['title'][:140]}]({item['url']}) — {item['source']}")
 
     sections.extend([
         "",
-        "**Fakta:** Kurser og ændringer er maskinelt hentede. **Vurdering:** Risk-signalet følger faste regler og er ikke investeringsrådgivning.",
-        "SpaceX følges som unoteret selskabsnyhed; der findes ingen offentlig SpaceX-aktiekurs.",
+        f"## Forventning: **{call}**",
+        f"**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er {assessment['score']:+d}.",
+        f"**Vurdering:** {market_reading(markets)}",
+        "",
+        "### Tre forhold at overvåge",
+        "1. Om futuresbevægelsen holder efter den amerikanske åbning.",
+        "2. Om olie og den 10-årige rente fortsætter i samme retning.",
+        "3. Om markedsbredden bekræfter indeksbevægelsen.",
+        "",
+        "_SpaceX følges som unoteret selskabsnyhed; der findes ingen offentlig SpaceX-aktiekurs._",
     ])
-    return "\n".join(sections)[:1950]
+    return "\n".join(sections)
+
+
+def split_discord(text: str, limit: int = 1900) -> list[str]:
+    chunks: list[str] = []
+    current = ""
+    for block in text.split("\n\n"):
+        candidate = f"{current}\n\n{block}".strip()
+        if len(candidate) <= limit:
+            current = candidate
+        else:
+            if current:
+                chunks.append(current)
+            current = block
+    if current:
+        chunks.append(current[:limit])
+    return chunks
 
 
 def post_discord(text: str) -> None:
     webhook = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook:
         raise RuntimeError("DISCORD_WEBHOOK_URL is missing")
-    response = requests.post(
-        webhook,
-        json={"content": text, "allowed_mentions": {"parse": []}},
-        timeout=20,
-    )
-    response.raise_for_status()
+    for chunk in split_discord(text):
+        response = requests.post(
+            webhook,
+            json={"content": chunk, "allowed_mentions": {"parse": []}},
+            timeout=20,
+        )
+        response.raise_for_status()
 
 
 def serialise_quotes(quotes: dict[str, Quote]) -> dict[str, dict[str, Any]]:
