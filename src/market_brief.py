@@ -641,7 +641,6 @@ def make_discord_text(
         "2. Om olie og den 10-årige rente fortsætter i samme retning.",
         "3. Om markedsbredden bekræfter indeksbevægelsen.",
         "",
-        "_SpaceX indgår i watchlisten som SPCX._",
     ])
     return "\n".join(sections)
 
