@@ -1,8 +1,8 @@
 {
   "feed_version": 2,
   "status": "ok",
-  "updated_at": "2026-07-28T08:24:44.825552+00:00",
-  "updated_at_copenhagen": "2026-07-28T10:24:44.825552+02:00",
+  "updated_at": "2026-07-28T09:58:11.168698+00:00",
+  "updated_at_copenhagen": "2026-07-28T11:58:11.168698+02:00",
   "brief_type": "morning",
   "market_calendar": {
     "open": true,
@@ -22,26 +22,26 @@
     "S&P 500": {
       "symbol": "^GSPC",
       "price": 7413.18017578125,
-      "change_pct": 0.06587707331529025,
-      "previous_close": 7408.2998046875,
+      "change_pct": 0.01619264104413265,
+      "previous_close": 7411.97998046875,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Nasdaq": {
       "symbol": "^IXIC",
       "price": 24932.080078125,
-      "change_pct": -0.8179326719084723,
-      "previous_close": 25137.689453125,
+      "change_pct": -0.17513032135768603,
+      "previous_close": 24975.8203125,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Dow Jones": {
       "symbol": "^DJI",
       "price": 52210.078125,
-      "change_pct": 0.9638634670531054,
-      "previous_close": 51711.6484375,
+      "change_pct": 0.5059519512582433,
+      "previous_close": 51947.25,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "VIX": {
       "symbol": "^VIX",
@@ -53,43 +53,43 @@
     },
     "S&P futures": {
       "symbol": "ES=F",
-      "price": 7425.75,
-      "change_pct": -0.30208438223743306,
+      "price": 7441.75,
+      "change_pct": -0.08726882153525795,
       "previous_close": 7448.25,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Nasdaq futures": {
       "symbol": "NQ=F",
-      "price": 27884.0,
-      "change_pct": -1.0854913089748175,
+      "price": 27970.75,
+      "change_pct": -0.7777580702376774,
       "previous_close": 28190.0,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Dow futures": {
       "symbol": "YM=F",
-      "price": 52416.0,
-      "change_pct": 0.06490779275323266,
+      "price": 52544.0,
+      "change_pct": 0.3092665419418994,
       "previous_close": 52382.0,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
-      "price": 6288.64990234375,
-      "change_pct": 0.10251076366905032,
+      "price": 6305.2900390625,
+      "change_pct": 0.36738788210695095,
       "previous_close": 6282.2099609375,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "DAX": {
       "symbol": "^GDAXI",
-      "price": 25474.609375,
-      "change_pct": 0.4478527933367227,
+      "price": 25522.640625,
+      "change_pct": 0.6372427799880898,
       "previous_close": 25361.029296875,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Nikkei 225": {
       "symbol": "^N225",
@@ -97,7 +97,7 @@
       "change_pct": -3.9522908415368763,
       "previous_close": 64931.19140625,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Hang Seng": {
       "symbol": "^HSI",
@@ -105,7 +105,7 @@
       "change_pct": 0.4112714042595167,
       "previous_close": 25207.1796875,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Shanghai Composite": {
       "symbol": "000001.SS",
@@ -113,63 +113,63 @@
       "change_pct": -1.1645299496841566,
       "previous_close": 3858.2451171875,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "USA 10-årig": {
       "symbol": "^TNX",
       "price": 4.640999794006348,
-      "change_pct": 0.0,
-      "previous_close": 4.640999794006348,
+      "change_pct": -0.8121416460145969,
+      "previous_close": 4.678999900817871,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.459127+00:00"
+      "timestamp": "2026-07-28T09:58:17.130332+00:00"
     },
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "price": 1.1375269889831543,
-      "change_pct": -0.17290880566966926,
+      "price": 1.1361054182052612,
+      "change_pct": -0.2976630111156231,
       "previous_close": 1.1394972801208496,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Dollarindeks": {
       "symbol": "DX-Y.NYB",
-      "price": 101.52400207519531,
-      "change_pct": 0.013791684238229074,
-      "previous_close": 101.51000213623047,
+      "price": 101.5790023803711,
+      "change_pct": 0.10742205416049977,
+      "previous_close": 101.47000122070312,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "WTI-olie": {
       "symbol": "CL=F",
-      "price": 80.55000305175781,
-      "change_pct": -2.493641863423035,
+      "price": 80.8499984741211,
+      "change_pct": -2.130495246612951,
       "previous_close": 82.61000061035156,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Guld": {
       "symbol": "GC=F",
-      "price": 4044.0,
-      "change_pct": -0.7485581052889878,
+      "price": 4030.89990234375,
+      "change_pct": -1.070072343999262,
       "previous_close": 4074.5,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Bitcoin": {
       "symbol": "BTC-USD",
-      "price": 63395.98828125,
-      "change_pct": -0.5161407304125953,
+      "price": 63295.98046875,
+      "change_pct": -0.6730775242751785,
       "previous_close": 63724.8984375,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     },
     "Ethereum": {
       "symbol": "ETH-USD",
-      "price": null,
-      "change_pct": null,
-      "previous_close": null,
+      "price": 1872.81005859375,
+      "change_pct": -0.9416766863125314,
+      "previous_close": 1890.613525390625,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:46.335910+00:00"
+      "timestamp": "2026-07-28T09:58:16.908445+00:00"
     }
   },
   "watchlist": {
@@ -179,7 +179,7 @@
       "change_pct": 1.1681024493330971,
       "previous_close": 333.0199890136719,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Microsoft": {
       "symbol": "MSFT",
@@ -187,7 +187,7 @@
       "change_pct": 1.938693649417722,
       "previous_close": 381.70001220703125,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Nvidia": {
       "symbol": "NVDA",
@@ -195,7 +195,7 @@
       "change_pct": -4.994199387907427,
       "previous_close": 206.83999633789062,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Amazon": {
       "symbol": "AMZN",
@@ -203,7 +203,7 @@
       "change_pct": -0.3101982761663957,
       "previous_close": 232.11000061035156,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Alphabet": {
       "symbol": "GOOGL",
@@ -211,7 +211,7 @@
       "change_pct": 2.1329854045531116,
       "previous_close": 319.739990234375,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Meta": {
       "symbol": "META",
@@ -219,7 +219,7 @@
       "change_pct": -0.2217791493143717,
       "previous_close": 595.1900024414062,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Tesla": {
       "symbol": "TSLA",
@@ -227,7 +227,7 @@
       "change_pct": -1.2171349626078465,
       "previous_close": 313.0299987792969,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Coinbase": {
       "symbol": "COIN",
@@ -235,7 +235,7 @@
       "change_pct": 5.812124958777942,
       "previous_close": 158.2899932861328,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Strategy": {
       "symbol": "MSTR",
@@ -243,7 +243,7 @@
       "change_pct": 7.614272386118781,
       "previous_close": 91.66999816894531,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "IonQ": {
       "symbol": "IONQ",
@@ -251,7 +251,7 @@
       "change_pct": 9.378800249837106,
       "previous_close": 32.84000015258789,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Quantum Computing": {
       "symbol": "QUBT",
@@ -259,7 +259,7 @@
       "change_pct": 7.133246595604015,
       "previous_close": 7.429999828338623,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "MP Materials": {
       "symbol": "MP",
@@ -267,7 +267,7 @@
       "change_pct": 4.430997251478241,
       "previous_close": 41.29999923706055,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "Rigetti": {
       "symbol": "RGTI",
@@ -275,7 +275,7 @@
       "change_pct": 10.53004074177666,
       "previous_close": 14.149999618530273,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "IREN": {
       "symbol": "IREN",
@@ -283,7 +283,7 @@
       "change_pct": -2.1041240510335957,
       "previous_close": 37.06999969482422,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
     },
     "SpaceX": {
       "symbol": "SPCX",
@@ -291,62 +291,215 @@
       "change_pct": -1.3643866333431842,
       "previous_close": 115.06999969482422,
       "currency": null,
-      "timestamp": "2026-07-28T08:24:47.662664+00:00"
+      "timestamp": "2026-07-28T09:58:21.579667+00:00"
+    }
+  },
+  "crosschecks": {
+    "crypto": {
+      "source": "CoinGecko",
+      "url": "https://www.coingecko.com/",
+      "bitcoin": {
+        "price_usd": 63361.0,
+        "change_24h_pct": -2.8494170808507318,
+        "last_updated_at": 1785232570
+      },
+      "ethereum": {
+        "price_usd": 1876.19,
+        "change_24h_pct": -4.469885705887723,
+        "last_updated_at": 1785232570
+      }
+    },
+    "vix": {
+      "source": "Cboe",
+      "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
+      "value": 18.67,
+      "timestamp": "07/27/2026T20:00:00+00:00"
     }
   },
   "headlines": [
     {
-      "title": "Earnings live: LVMH sales grow as US luxury shoppers boost results",
-      "url": "https://finance.yahoo.com/markets/live/earnings-live-lvmh-sales-grow-as-us-luxury-shoppers-boost-results-115207214.html",
+      "title": "Wall Street ends mixed as investors focus on tech earnings - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWNrM2R3eVRRWVNNdGhKSnJLUzVjQ0Qwb21PVmFUcXd2OEpDRnVsZDVCMGtFV3RTbE5aM3ZuS2xRWkZtcDZ1VWFseVBLSXBoZWVqV083TV9TQVAyUVYzLXQ5S2g4WDdLRDJQbUhodXhGSlg1a28yaU5laUFEbG8zaWp0X0xESkxsYkV0d2lYZnc2VTRIYlE?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 22:55:06 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "TRADING DAY Oil plunges, stocks 'n' bonds shrug - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdGNuZzh0Q3lRNmZKTjE1QUR5UTIzLUxxbWlCQTREclFhbm9wbUJoNE5YZW1OVC01MFhWOENqM1ZOS1NMWm5ITVNTMktjZU1wWjRmQ3dOMnhVTkJRS3hhaWF3ckRrSkRWbEVXeGNuRVZuRjFzejBVQjk2VEF5eHpteUlyVjV4YXM1OVNvb0dDQVRnTnBycjI3MlVrbHNwV3ZfYkNXSDNn?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 21:10:09 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "AI anxiety sparks tech rout, broad selloff in Asian markets - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWUF6MHN4NmxzbUxRX0JpZGFFTlliRjB0WW1DQ3NvVUpQVFJ3aFNoUFJ6cG0tNGx2anJ3OFFTWXk3VUdQQVowWHdoRnVzZTZsZV9KdTR1cWxDeFpXTTFidGxCR25jc2ZYUXp1Z2lYRzJwZDcweHNJalJfamhJT0lvTXRKWQ?oc=5",
+      "source": "Reuters",
+      "published_at": "Tue, 28 Jul 2026 02:30:00 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Morning Bid: China chip champ - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUTRoU0xKbG1VaWljZWE0Vkd5akUyckxHM1ZLSXlCX1Fsb0FvODQ0U2dCVmkzYkpRV1VldktYeEZTQ2RJSEtLVU5VRmtvZF82WklMbGJnM2JVNk9vVy1LekpKWjlRRFVrSTFYRXZJVDhrbEhULVZjcWxJejNaamFvVGZDRkpMSE9lSmlDVGJiMGx3QjVCWTVz?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 10:54:19 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Gold rises as oil retreats on pause in US-Iran strikes; Fed rate decision in focus - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVHhXdm1LMW9wUmp6UHctWldmTGpCQWlBOWVTdk5GeEtuMzNYQU42TGlWWXQtSDAxeE1aa3JvNFRDRUx6WVB5eGliS21TMEluRkJEUndXeHE1MUYzUVZlZG9CQ1V4VXFITFIyMEhJNUNlczhueTJpX2FjbFBoSmVkSnZJX0pQOS05RExueWpHMGpRMElqUTBVV0lqajBCRG9Kc1E?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 01:44:00 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Growing number of brokerages see July Fed decision as 'a close call' - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNa1VuQzdOeGxfQ1pnN09BTURpVUtqalhFNmNiaGtBOXJENWhzMjFZYzJxdC1zNGVFMjNKUmdneFA5Qkx2NU1PVWxLdHhSS1kzRGN0Q1VxUW1JaTNFalMyZWhMY2ZWSlBlY01EakRDY1lPaFlQZ3BzdXhoUVUteDRWNGhxeUUyNFBfMlpLSnI1NlVvNjE0ajVRMWVTX2ViUDBVMkxHaUVDVno?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 10:27:44 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Dollar hovers near four-week peak as markets mull Fed hike odds - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTVNBcUd0dURQNWZPam9LcTlYQ2xPQXBXSWR4SUxHWGRKZDNGdmxDSUlBa2dHUVVhRk4zc2JSMlRVQzc4akxza2NqZ3BXRjJzOGwwWEJqSmpJa1Q5VUhGam8xQ0RVRElkRlp0THZyMWRTbzFtRzA1dUZqdGtXWXFKWVVyUVJ1NDRJMjYzWHd3bGtnT2hkVUlrR3pIM0dPb1lpSjB3?oc=5",
+      "source": "Reuters",
+      "published_at": "Tue, 28 Jul 2026 00:36:00 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Stocks mixed, oil and Treasury yields drop on Iran-US pause - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA2VEF4Z09wNW9GaGZxaENhMVk5X3ZPSVhjSDNwb1ZKeld2S0xDZFNkZ1l6RDRNdHZ6bktSMnhrOFpNNTJQaU83eEtHa3FVQ0swVjVjSGF0SDlqbjZoWVpQbW1icmJoM1Y2TldZUERiTHdGNUpRbnpWR080TQ?oc=5",
+      "source": "Reuters",
+      "published_at": "Mon, 27 Jul 2026 20:26:52 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Bitcoin ETFs post third straight weekly inflows despite $465 million in late-week losses - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTUtIcE9vV053aVY2dU03SFdtRUJvZGJnN3Nkd0FETUJHSy1TaWg0c2tMU0ZGRHYybFo3RjJPR1BGb05HVjlBQUMxcWpRcGRWdXl4bWJzbTdvaFBCaHVVTWNaaHVVWU1zT0RpeUktVVJSb0VQbXIxdzFhal9hUFNpOTVlaHlQZ014TDBqY0JXNDlMR3hjSFVJajNpSGlyd1FRd2hJQl9qWmE4dUctWDd1eGkwN1N4ckpqZ3VvWTVqNUV0WFRGMDhDTkFzYXBCdzduVWdJRWh4Qno?oc=5",
+      "source": "CoinDesk",
+      "published_at": "Mon, 27 Jul 2026 11:05:32 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Bitcoin (BTC) price may fall to $52,000 as demand remains elusive, Nansen analyst says - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeTVodjdoV0w3NFgzMmxOWjlxNXZYbDJyM1dMTklMZzY2ZjRqNW1xZTVwVEotYnVZSG85ZjRNN2dsTFZqOVpSN2FURXRlQ3hKakhNVG54TlNwaElyZGlMZF9hNVN1QzVZTjRRVk5GOGxYVnp6UzFpc0c5Q2JSNmNlM0dUYnpNcHhJLWczOTEzeXNlX0poMENOR3hqbUV0dkZ6ZVVkRHBFX0dUbzd3Wi04c3BxZm81S25qcDk2S001NExvVS1KMV80Ng?oc=5",
+      "source": "CoinDesk",
+      "published_at": "Mon, 27 Jul 2026 19:59:21 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Uphold reduces global headcount by 17% amid enterprise pivot - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPTl9nSkU4UkwzY1VScU1qeXpOQ2Y4Z2RabTVZS1lsa0lLckE4cUIwelRjTTVWbXotWXdPbmJHTDdNME5hNWZPQnJiZFp1OXVGTmV6SnVNZlJIcU1OQmhXWV9XcFNYbGhydTVXNW9TcElNdW5GeGQ5Qmg2SnVmNHBOaXJlbGp5RUh3TVFUTnpsdlZKUFFTWWpuSzNYT1pwR0NNN0l6cVd3bDZHYWtjTV9HTjNKWkdkdmVtU3VOV0U4WUxYVzNDZlk5YnZYSlREQQ?oc=5",
+      "source": "CoinDesk",
+      "published_at": "Mon, 27 Jul 2026 16:47:59 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "South Korea trading giant puts receivables onchain in tokenization test with LG CNS - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORmdOdU95aFJ6aHJpdUtiN1oyNWI5UWZ4UEp5a0RGTEdDVEdTV3h5cjFMVFpHOU5tRG42WUZnVFpxSG5RZUdFY0tTc29OaDRsMlFQWUZ6cEx3dVV4cWNOYXVkU1pRVlowb2FTY3hjUk1abDBZTEExQUsyMHF1eXVEajlwWE1CY3VPVXNuSm5oSmktY21ZaDl6QjR1RzVqcGo1N2kydlZHZVRwWjJDZm5rRy1MZ2tCUTA1MEM0Tmt0ZVJ5WXBvWUkw?oc=5",
+      "source": "CoinDesk",
+      "published_at": "Mon, 27 Jul 2026 00:02:24 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Nasdaq futures drop on AI chip worries ahead of pivotal earnings - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNkhJQS14Y3d3QkMxeG5XZmR3cldUel9CSk9pdDZrSDFkc0gydEgxSXQ1d0xzTi1OR29xVWEwUjJtV1k4V1p3WlZJeUZCbnB2MzJOYjBHRExWTmVobWlibGFqajlUcWx5emx2M01vYmNwcHlDM2FvYjRwU3o2M0szNVpyM3JwakJyRkZReUMyVk5GUklTWWczOXdFSUcwNkh1clFNVWJn?oc=5",
+      "source": "Reuters",
+      "published_at": "Tue, 28 Jul 2026 08:59:45 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Barclays reports 17% profit rise on strong equities trading - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOd2VUaFRoZUdOR3Iyb3RyRmgtbjA1bWEzdnVwSVctRlpTQ0NsOWlwMm90OEV3ejNFVDBtTWh0bUd5aVdkOTlQc2pFZ2ZFWU9FcWlsV2JNZFhhOE00aDF4bDM4YnQ0S1ZOaE5Ic0pUQkdWSEVmYVQzRnV6TG5RZ3VleklLX09lUVVxZ3dFdlN4R2pqOTgwTXdFbnBsSS1zRnpvSVAwdWRTVUhFUTVoOWFnbENSV1Q4RFBs?oc=5",
+      "source": "Reuters",
+      "published_at": "Tue, 28 Jul 2026 06:43:06 GMT",
+      "topic": "Krydsmarked"
+    },
+    {
+      "title": "Stock market today: S&P 500, Nasdaq futures slide as chip sell-off deepens",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-july-28-dow-sp-500-nasdaq-082832371.html",
       "source": "Yahoo Finance",
-      "published_at": "2026-07-27T11:52:07Z"
+      "published_at": "2026-07-28T08:28:32Z"
     },
     {
-      "title": "Is AI spending actually a sore spot for Big Tech margins?",
-      "url": "https://finance.yahoo.com/video/is-ai-spending-actually-a-sore-spot-for-big-tech-margins-134333155.html",
+      "title": "Why this oil pullback could be a buying opportunity",
+      "url": "https://finance.yahoo.com/video/why-this-oil-pullback-could-be-a-buying-opportunity-160830477.html",
       "source": "Yahoo Finance Video",
-      "published_at": "2026-07-27T13:43:33Z"
+      "published_at": "2026-07-27T16:08:30Z"
     },
     {
-      "title": "SCHH Offers Low-Cost U.S. REITs While REET Adds Global Reach",
-      "url": "https://www.fool.com/coverage/etfs/2026/07/28/schh-offers-low-cost-u-s-reits-while-reet-adds-global-reach/",
+      "title": "The Stock Market Sounds an Alarm Triggered Just Once Before. History Says This Will Happen Next.",
+      "url": "https://www.fool.com/investing/2026/07/28/stock-market-alarm-once-before-this-happen-next/",
       "source": "Motley Fool",
-      "published_at": "2026-07-28T05:20:10Z"
+      "published_at": "2026-07-28T09:32:00Z"
     },
     {
-      "title": "Morgan Stanley sees a troubling S&P 500 repeat",
-      "url": "https://www.thestreet.com/investing/morgan-stanley-sp500-2021-market-pattern",
-      "source": "TheStreet",
-      "published_at": "2026-07-28T03:07:00Z"
-    },
-    {
-      "title": "SNDK, NVDA, SKHY, ASML Stocks Extend Slide Overnight Amid China's AI Challenge, Tech Rotation",
-      "url": "https://stocktwits.com/news-articles/markets/equity/sndk-nvda-skhy-asml-stocks-extend-slide-overnight-amid-china-ai-challenge-tech-rotation/cZZCeckR766",
+      "title": "Nasdaq, S&P 500 Futures Slip As Korea Chip Shock Dents AI Memory Heavyweights Ahead Of Fed Decision: Why NVDA, SNDK, MU, APLD, SPCX, SLS, CAPR Are In Focus",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-sp500-futures-slip-korea-chip-shock-ai-memory-fed-decision-why-nvda-sndk-mu-apld-spcx-sls-capr-in-focus/cZZCK96RJG0",
       "source": "Stocktwits",
-      "published_at": "2026-07-28T02:23:17Z"
-    },
-    {
-      "title": "3 Reasons SBH is Risky and 1 Stock to Buy Instead",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-sbh-risky-1-005302142.html",
-      "source": "StockStory",
-      "published_at": "2026-07-28T00:53:02Z"
-    },
-    {
-      "title": "2 Reasons to Like ELF (and 1 Not So Much)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/2-reasons-elf-1-not-003702629.html",
-      "source": "StockStory",
-      "published_at": "2026-07-28T00:37:02Z"
-    },
-    {
-      "title": "Only 14% of Gen X Has a Pension. For a 53-Year-Old Riding an AI-Heavy S&P 500, Social Security Is the Only Floor Left.",
-      "url": "https://247wallst.com/personal-finance/social-security/2026/07/27/only-14-of-gen-x-has-a-pension-for-a-53-year-old-riding-an-ai-heavy-sp-500-social-security-is-the-only-floor-left/",
-      "source": "24/7 Wall St.",
-      "published_at": "2026-07-28T00:36:08Z"
+      "published_at": "2026-07-28T08:46:55Z"
     }
   ],
-  "discord_text": "# Morgenbrief — tirsdag 28.07.2026\n**Data kontrolleret 28.07.2026 kl. 10:24 CEST.**\n\n## Samlet signal: Neutral\nAmerikanske futures ligger tæt på uændret.\n\n## Seneste amerikanske lukning\n- **S&P 500:** 7.413,18 (+0,07%)\n- **Nasdaq Composite:** 24.932,08 (-0,82%)\n- **Dow Jones:** 52.210,08 (+0,96%)\n\n## Asien og amerikanske futures\n- **Nikkei 225:** 62.364,92 (-3,95%)\n- **Hang Seng:** 25.310,85 (+0,41%)\n- **Shanghai Composite:** 3.813,31 (-1,16%)\n- **S&P 500-futures:** 7.425,75 (-0,30%)\n- **Nasdaq 100-futures:** 27.884,00 (-1,09%)\n\n## Renter, VIX, olie og valuta\n- **10-årig Treasury:** 4,64% (+0,0 bp)\n- **VIX:** 18,67 (+0,48%)\n- **WTI:** 80,55 (-2,49%)\n- **EUR/USD:** 1,14 (-0,17%)\n\n## Krypto\n- **Bitcoin:** 63.395,99 (-0,52%)\n- **Ethereum:** n/a (n/a%)\nDer er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.\n\n## Watchlist — seneste officielle lukning\nDisse er **ikke verificerede premarket-kurser**: RGTI +10.53% · IONQ +9.38% · MSTR +7.61% · QUBT +7.13% · COIN +5.81%\n\n## Udvalgte markedsoverskrifter\n• [Earnings live: LVMH sales grow as US luxury shoppers boost results](https://finance.yahoo.com/markets/live/earnings-live-lvmh-sales-grow-as-us-luxury-shoppers-boost-results-115207214.html) — Yahoo Finance\n\n## Forventning: **Neutral**\n**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er -1.\n**Vurdering:** Amerikanske futures ligger tæt på uændret.\n\n### Tre forhold at overvåge\n1. Om futuresbevægelsen holder efter den amerikanske åbning.\n2. Om olie og den 10-årige rente fortsætter i samme retning.\n3. Om markedsbredden bekræfter indeksbevægelsen.\n",
+  "discord_text": "# Morgenbrief — tirsdag 28.07.2026\n**Data kontrolleret 28.07.2026 kl. 11:58 CEST.**\n\n## Samlet markedssignal: Neutral\nAmerikanske futures er svagt negative, mens faldende lange renter og oliepriser dæmper risikobilledet.\n\n### Fakta\n- Wall Street lukkede blandet: S&P 500 +0,02% (7.413,18), Nasdaq -0,18% (24.932,08), Dow Jones +0,51% (52.210,08).\n- Asien: Nikkei 225 -3,95% (62.364,92), Hang Seng +0,41% (25.310,85), Shanghai Composite -1,16% (3.813,31).\n- Europæiske futures peger på svagt positiv åbning: Euro Stoxx 50 +0,37%, DAX +0,64%.\n- Amerikanske indeksfutures: S&P 500 -0,09%, Nasdaq -0,78%, Dow +0,31%.\n- 10-årig amerikansk statsrente: 4,64% (-0,81%).\n- VIX: 18,67 (+0,48%).\n- EUR/USD: 1,136 (-0,30%), dollarindeks +0,11%.\n- WTI-olie: 80,85 (-2,13%).\n- Guld: 4.030,90 (-1,07%).\n- Bitcoin: 63.295,98 (-0,67%).\n- Ethereum: 1.872,81 (-0,94%).\n- Bitcoin ETF'er har haft tredje uge i træk med nettoindstrømning, trods $465 mio. i tab sidst på ugen ([CoinDesk](https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTUtIcE9vV053aVY2dU03SFdtRUJvZGJnN3Nkd0FETUJHSy1TaWg0c2tMU0ZGRHYybFo3RjJPR1BGb05HVjlBQUMxcWpRcGRWdXl4bWJzbTdvaFBCaHVVTWNaaHVVWU1zT0RpeUktVVJSb0VQbXIxdzFhal9hUFNpOTVlaHlQZ014TDBqY0JXNDlMR3hjSFVJajNpSGlyd1FRd2hJQl9qWmE4dUctWDd1eGkwN1N4ckpqZ3VvWTVqNUV0WFRGMDhDTkFzYXBCdzduVWdJRWh4Qno?oc=5)).\n- Ingen verificerede data om større likvidationer, regulering eller sikkerhedshændelser.\n\n### Vurdering\n- Markedet er neutral med svagt negativt bias pga. Nasdaq-futures og bredt salg i asiatiske tech-aktier.\n- Faldende olie og renter dæmper risici, men AI-relateret usikkerhed presser tech.\n\n### Risici\n1. Fortsat svaghed i Nasdaq og asiatiske tech-aktier kan trække globale markeder ned.\n2. Olieprisfald kan signalere lavere vækstforventninger.\n3. Usikkerhed om Fed-beslutning og AI-chips kan øge volatiliteten.\n\n### Investor-fokus\nHold øje med udviklingen i amerikanske tech-futures, olieprisen og markedsbredden. Langsigtede investorer bør overvåge centralbankkommunikation og sektorrotation.\n\n### Kalender\n[]\n\n### Kilder\n- [Wall Street ends mixed as investors focus on tech earnings - Reuters](https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWNrM2R3eVRRWVNNdGhKSnJLUzVjQ0Qwb21PVmFUcXd2OEpDRnVsZDVCMGtFV3RTbE5aM3ZuS2xRWkZtcDZ1VWFseVBLSXBoZWVqV083TV9TQVAyUVYzLXQ5S2g4WDdLRDJQbUhodXhGSlg1a28yaU5laUFEbG8zaWp0X0xESkxsYkV0d2lYZnc2VTRIYlE?oc=5)\n- [AI anxiety sparks tech rout, broad selloff in Asian markets - Reuters](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWUF6MHN4NmxzbUxRX0JpZGFFTlliRjB0WW1DQ3NvVUpQVFJ3aFNoUFJ6cG0tNGx2anJ3OFFTWXk3VUdQQVowWHdoRnVzZTZsZV9KdTR1cWxDeFpXTTFidGxCR25jc2ZYUXp1Z2lYRzJwZDcweHNJalJfamhJT0lvTXRKWQ?oc=5)\n- [Nasdaq futures drop on AI chip worries ahead of pivotal earnings - Reuters](https://news.google.com/rss/articles/CBMipgFBVV95cUxPNkhJQS14Y3d3QkMxeG5XZmR3cldUel9CSk9pdDZrSDFkc0gydEgxSXQ1d0xzTi1OR29xVWEwUjJtV1k4V1p3WlZJeUZCbnB2MzJOYjBHRExWTmVobWlibGFqajlUcWx5emx2M01vYmNwcHlDM2FvYjRwU3o2M0szNVpyM3JwakJyRkZReUMyVk5GUklTWWczOXdFSUcwNkh1clFNVWJn?oc=5)\n- [Bitcoin ETFs post third straight weekly inflows despite $465 million in late-week losses - CoinDesk](https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTUtIcE9vV053aVY2dU03SFdtRUJvZGJnN3Nkd0FETUJHSy1TaWg0c2tMU0ZGRHYybFo3RjJPR1BGb05HVjlBQUMxcWpRcGRWdXl4bWJzbTdvaFBCaHVVTWNaaHVVWU1zT0RpeUktVVJSb0VQbXIxdzFhal9hUFNpOTVlaHlQZ014TDBqY0JXNDlMR3hjSFVJajNpSGlyd1FRd2hJQl9qWmE4dUctWDd1eGkwN1N4ckpqZ3VvWTVqNUV0WFRGMDhDTkFzYXBCdzduVWdJRWh4Qno?oc=5)\n- [Yahoo Finance markedsdata](https://finance.yahoo.com/markets/)\n- [Cboe VIX](https://www.cboe.com/tradable_products/vix/vix_historical_data/)\n- [CoinGecko](https://www.coingecko.com/)",
+  "dashboard": {
+    "headline": "Neutral markedssignal med svagt negativt bias",
+    "lede": "Amerikanske futures og asiatiske tech-aktier er svagt negative, mens faldende olie og renter dæmper risikobilledet.",
+    "facts": [
+      "S&P 500 lukkede +0,02% til 7.413,18; Nasdaq -0,18% til 24.932,08; Dow Jones +0,51% til 52.210,08.",
+      "Nikkei 225 faldt -3,95%; Hang Seng steg +0,41%; Shanghai Composite faldt -1,16%.",
+      "Nasdaq-futures -0,78%; S&P 500-futures -0,09%; Dow-futures +0,31%.",
+      "10-årig amerikansk statsrente 4,64% (-0,81%).",
+      "VIX 18,67 (+0,48%)."
+    ],
+    "assessment": [
+      "Markedet er neutral med svagt negativt bias pga. Nasdaq-futures og bredt salg i asiatiske tech-aktier.",
+      "Faldende olie og renter dæmper risici, men AI-relateret usikkerhed presser tech."
+    ],
+    "risks": [
+      "Fortsat svaghed i Nasdaq og asiatiske tech-aktier kan trække globale markeder ned.",
+      "Olieprisfald kan signalere lavere vækstforventninger.",
+      "Usikkerhed om Fed-beslutning og AI-chips kan øge volatiliteten."
+    ],
+    "investor_focus": "Langsigtede investorer bør overvåge udviklingen i amerikanske tech-futures, olieprisen og markedsbredden samt centralbankkommunikation.",
+    "calendar": [],
+    "sources": [
+      {
+        "label": "Wall Street ends mixed as investors focus on tech earnings - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbWNrM2R3eVRRWVNNdGhKSnJLUzVjQ0Qwb21PVmFUcXd2OEpDRnVsZDVCMGtFV3RTbE5aM3ZuS2xRWkZtcDZ1VWFseVBLSXBoZWVqV083TV9TQVAyUVYzLXQ5S2g4WDdLRDJQbUhodXhGSlg1a28yaU5laUFEbG8zaWp0X0xESkxsYkV0d2lYZnc2VTRIYlE?oc=5"
+      },
+      {
+        "label": "AI anxiety sparks tech rout, broad selloff in Asian markets - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWUF6MHN4NmxzbUxRX0JpZGFFTlliRjB0WW1DQ3NvVUpQVFJ3aFNoUFJ6cG0tNGx2anJ3OFFTWXk3VUdQQVowWHdoRnVzZTZsZV9KdTR1cWxDeFpXTTFidGxCR25jc2ZYUXp1Z2lYRzJwZDcweHNJalJfamhJT0lvTXRKWQ?oc=5"
+      },
+      {
+        "label": "Nasdaq futures drop on AI chip worries ahead of pivotal earnings - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNkhJQS14Y3d3QkMxeG5XZmR3cldUel9CSk9pdDZrSDFkc0gydEgxSXQ1d0xzTi1OR29xVWEwUjJtV1k4V1p3WlZJeUZCbnB2MzJOYjBHRExWTmVobWlibGFqajlUcWx5emx2M01vYmNwcHlDM2FvYjRwU3o2M0szNVpyM3JwakJyRkZReUMyVk5GUklTWWczOXdFSUcwNkh1clFNVWJn?oc=5"
+      },
+      {
+        "label": "Bitcoin ETFs post third straight weekly inflows despite $465 million in late-week losses - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTUtIcE9vV053aVY2dU03SFdtRUJvZGJnN3Nkd0FETUJHSy1TaWg0c2tMU0ZGRHYybFo3RjJPR1BGb05HVjlBQUMxcWpRcGRWdXl4bWJzbTdvaFBCaHVVTWNaaHVVWU1zT0RpeUktVVJSb0VQbXIxdzFhal9hUFNpOTVlaHlQZ014TDBqY0JXNDlMR3hjSFVJajNpSGlyd1FRd2hJQl9qWmE4dUctWDd1eGkwN1N4ckpqZ3VvWTVqNUV0WFRGMDhDTkFzYXBCdzduVWdJRWh4Qno?oc=5"
+      },
+      {
+        "label": "Yahoo Finance markedsdata",
+        "url": "https://finance.yahoo.com/markets/"
+      },
+      {
+        "label": "Cboe VIX",
+        "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data/"
+      },
+      {
+        "label": "CoinGecko",
+        "url": "https://www.coingecko.com/"
+      }
+    ]
+  },
+  "brief_engine": {
+    "mode": "github-models",
+    "model": "openai/gpt-4.1",
+    "grounding": "Kun Markedspuls-evidenspakken"
+  },
   "methodology": {
-    "facts": "Kurser og procentændringer hentes maskinelt via Yahoo Finance.",
+    "facts": "Kurser og procentændringer hentes maskinelt via Yahoo Finance. VIX kontrolleres mod Cboe, og BTC/ETH krydstjekkes mod CoinGecko, når kilden svarer.",
     "assessment": "Risk-regimet beregnes ud fra faste tærskler for futures, VIX, Bitcoin og olie."
   }
 }
