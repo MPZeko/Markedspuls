@@ -1,0 +1,13 @@
+{
+  "brief_updated_at": "2026-07-28T08:24:44.825552+00:00",
+  "discord": {
+    "status": "delivered",
+    "attempted_at": "2026-07-28T08:24:50.803339+00:00",
+    "delivered_at": "2026-07-28T08:24:50.803324+00:00",
+    "messages": 1
+  },
+  "workflow": {
+    "run_id": "30342249934",
+    "run_url": "https://github.com/MPZeko/Markedspuls/actions/runs/30342249934"
+  }
+}
