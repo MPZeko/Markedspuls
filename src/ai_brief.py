@@ -87,6 +87,11 @@ Ufravigelige kvalitetsregler:
   at der ikke foreligger et verificeret tal. Fravær af evidens er ikke bevis for,
   at en begivenhed ikke er sket.
 - Alle væsentlige kursniveauer skal svare nøjagtigt til evidenspakken.
+- "Euro Stoxx 50" og "DAX" i evidenspakken er kontantindeks, ikke futures.
+  Kald dem aldrig futures, og skriv ikke en forventet europæisk åbning uden
+  særskilt evidens.
+- For "USA 10-årig" skal renteændringen angives i basispoint fra feltet
+  change_bp. Brug aldrig instrumentets change_pct som renteændring.
 - Links må kun kopieres fra evidenspakkens kilder. Brug Markdown-links.
 - Skeln tydeligt mellem "Fakta" og "Vurdering".
 - Skriv dato og tidspunkt for datakontrollen tydeligt.
@@ -110,16 +115,28 @@ Returnér kun gyldig JSON uden kodehegn med denne struktur:
 
 Dashboardets facts skal være faktuelle og konkrete. Risks skal være de tre
 vigtigste risici, ikke generiske ansvarsfraskrivelser. Calendar må være en tom
-liste. Sources må kun indeholde URLs, der findes ordret i evidenspakken.
+liste. Hvis calendar er tom, skal hele Kalender-sektionen udelades fra
+discord_text; skriv aldrig [] i briefet. Sources må kun indeholde URLs, der
+findes ordret i evidenspakken.
 """
 
 
 def compact_payload(payload: dict[str, Any]) -> dict[str, Any]:
     allowed_quote_fields = {"symbol", "price", "change_pct", "previous_close", "timestamp"}
-    instruments = {
-        name: {key: value for key, value in quote.items() if key in allowed_quote_fields}
-        for name, quote in (payload.get("instruments") or {}).items()
-    }
+    instruments = {}
+    for name, quote in (payload.get("instruments") or {}).items():
+        compact = {
+            key: value for key, value in quote.items() if key in allowed_quote_fields
+        }
+        if (
+            name == "USA 10-årig"
+            and quote.get("price") is not None
+            and quote.get("previous_close") is not None
+        ):
+            compact["change_bp"] = (
+                float(quote["price"]) - float(quote["previous_close"])
+            ) * 100
+        instruments[name] = compact
     watchlist = {
         name: {key: value for key, value in quote.items() if key in allowed_quote_fields}
         for name, quote in (payload.get("watchlist") or {}).items()
@@ -183,6 +200,12 @@ def extract_json(text: str) -> dict[str, Any]:
 
 def validate_result(result: dict[str, Any], evidence: dict[str, Any]) -> dict[str, Any]:
     discord_text = str(result.get("discord_text") or "").strip()
+    discord_text = re.sub(
+        r"\n###\s+Kalender\s*\n\s*\[\]\s*(?=\n###|\Z)",
+        "",
+        discord_text,
+        flags=re.IGNORECASE,
+    )
     dashboard = result.get("dashboard")
     if len(discord_text) < 600 or not isinstance(dashboard, dict):
         raise ValueError("Modelsvar mangler et komplet brief eller dashboard")
