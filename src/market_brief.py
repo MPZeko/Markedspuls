@@ -8,6 +8,7 @@ import json
 import math
 import os
 import re
+import time
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
@@ -130,7 +131,10 @@ def get_quotes(items: dict[str, str]) -> dict[str, Quote]:
         auto_adjust=False,
         progress=False,
         group_by="column",
-        threads=True,
+        # yfinance shares a small SQLite cookie/cache database. Parallel
+        # downloads can intermittently fail with "database is locked" on
+        # GitHub runners, so keep this batch deterministic.
+        threads=False,
         timeout=15,
     )
     timestamp = datetime.now(timezone.utc).isoformat()
@@ -159,6 +163,22 @@ def get_quotes(items: dict[str, str]) -> dict[str, Quote]:
             currency=None,
             timestamp=timestamp,
         )
+
+    # Retry only missing symbols one at a time. A single upstream failure must
+    # not turn BTC, ETH or a watchlist row into n/a for the whole briefing.
+    missing = [
+        (name, symbol)
+        for name, symbol in items.items()
+        if result[name].price is None
+    ]
+    for name, symbol in missing:
+        for attempt in range(2):
+            if attempt:
+                time.sleep(1)
+            recovered = quote(symbol)
+            if recovered.price is not None:
+                result[name] = recovered
+                break
     return result
 
 
@@ -181,7 +201,7 @@ def get_intraday_quote(symbol: str, fallback: Quote) -> Quote:
         price = finite(closes.iloc[-1]) if len(closes) else None
         if price is None:
             return fallback
-        previous = fallback.price
+        previous = fallback.previous_close
         change = None
         if previous not in (None, 0):
             change = (price / previous - 1) * 100
