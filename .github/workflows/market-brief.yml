@@ -13,7 +13,7 @@ on:
           - premarket
           - close
   schedule:
-    - cron: "30 7 * * 1-5"
+    - cron: "20 8 * * 1-5"
       timezone: "Europe/Copenhagen"
     - cron: "0 9 * * 1-5"
       timezone: "America/New_York"
@@ -28,6 +28,7 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 concurrency:
   group: market-brief-${{ github.event.schedule || inputs.brief || github.event_name }}
@@ -60,7 +61,7 @@ jobs:
             brief="$MANUAL_BRIEF"
           elif [[ "$EVENT_NAME" == "push" ]]; then
             brief="morning"
-          elif [[ "$EVENT_SCHEDULE" == "30 7 * * 1-5" ]]; then
+          elif [[ "$EVENT_SCHEDULE" == "20 8 * * 1-5" ]]; then
             brief="morning"
           elif [[ "$EVENT_SCHEDULE" == "0 9 * * 1-5" ]]; then
             brief="premarket"
@@ -71,6 +72,13 @@ jobs:
 
       - name: Generate market snapshot
         run: python src/market_brief.py --brief "${{ steps.brief.outputs.brief }}" --dry-run
+
+      - name: Rediger beslutningsorienteret brief
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MARKEDSPULS_MODEL: openai/gpt-4.1
+        run: python src/ai_brief.py
 
       - name: Persist market snapshot
         shell: bash
