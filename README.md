@@ -1,15 +1,20 @@
 # Markedspuls
 
-Automatiske, beslutningsorienterede markedsbriefs på dansk – uden generativ AI.
+Automatiske, beslutningsorienterede markedsbriefs på dansk. Markedsfakta
+indsamles deterministisk, hvorefter GitHub Models redigerer dem til et kompakt,
+kildebegrænset brief. Modellen må ikke supplere evidenspakken med egne tal eller
+nyheder, og den regelbaserede briefing bruges automatisk som fallback.
 
 ## Leverancer
 
-- Morgenbrief kl. 07.30 i `Europe/Copenhagen`
+- Morgenbrief kl. 08.20 i `Europe/Copenhagen`
 - USA-premarket kl. 09.00 i `America/New_York` (30 minutter før normal åbning)
 - Dagsopsummering kl. 16.15 i `America/New_York`
 - Kort besked på amerikanske markedshelligdage
 - Discord-post via repository-secret `DISCORD_WEBHOOK_URL`
 - Dashboarddata i `data/latest.json` og historik i `data/archive/`
+- AI-redigering via den indbyggede `GITHUB_TOKEN` og GitHub Models; ingen
+  ekstra API-nøgle er nødvendig
 
 Tidsplanerne anvender IANA-tidszoner og følger derfor sommer-/vintertid.
 
