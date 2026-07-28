@@ -14,6 +14,7 @@ from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote_plus
 from zoneinfo import ZoneInfo
 
 import pandas_market_calendars as mcal
@@ -247,6 +248,43 @@ def get_official_vix(fallback: Quote) -> Quote:
         return fallback
 
 
+def get_crypto_crosscheck() -> dict[str, Any]:
+    url = (
+        "https://api.coingecko.com/api/v3/simple/price"
+        "?ids=bitcoin,ethereum&vs_currencies=usd"
+        "&include_24hr_change=true&include_last_updated_at=true"
+    )
+    try:
+        response = requests.get(
+            url,
+            timeout=15,
+            headers={"Accept": "application/json", "User-Agent": "Markedspuls/1.0"},
+        )
+        response.raise_for_status()
+        data = response.json()
+        return {
+            "source": "CoinGecko",
+            "url": "https://www.coingecko.com/",
+            "bitcoin": {
+                "price_usd": finite((data.get("bitcoin") or {}).get("usd")),
+                "change_24h_pct": finite(
+                    (data.get("bitcoin") or {}).get("usd_24h_change")
+                ),
+                "last_updated_at": (data.get("bitcoin") or {}).get("last_updated_at"),
+            },
+            "ethereum": {
+                "price_usd": finite((data.get("ethereum") or {}).get("usd")),
+                "change_24h_pct": finite(
+                    (data.get("ethereum") or {}).get("usd_24h_change")
+                ),
+                "last_updated_at": (data.get("ethereum") or {}).get("last_updated_at"),
+            },
+        }
+    except Exception as exc:
+        print(f"warning: CoinGecko crosscheck: {exc}")
+        return {}
+
+
 def extract_news_item(raw: dict[str, Any]) -> dict[str, Any] | None:
     content = raw.get("content") or raw
     title = content.get("title")
@@ -268,9 +306,10 @@ def extract_news_item(raw: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
-def get_headlines(limit: int = 8) -> list[dict[str, Any]]:
-    headlines: list[dict[str, Any]] = []
+def get_headlines(limit: int = 18) -> list[dict[str, Any]]:
+    headlines: list[dict[str, Any]] = get_trusted_market_headlines()
     seen: set[str] = set()
+    seen.update(item["url"] for item in headlines)
     raw_by_symbol: dict[str, list[dict[str, Any]]] = {}
     with ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(lambda s: yf.Ticker(s).news or [], symbol): symbol for symbol in NEWS_TICKERS}
@@ -291,6 +330,51 @@ def get_headlines(limit: int = 8) -> list[dict[str, Any]]:
             print(f"warning: news {symbol}: {exc}")
     headlines.extend(get_spacex_headlines())
     return headlines[:limit]
+
+
+def get_trusted_market_headlines() -> list[dict[str, Any]]:
+    queries = [
+        "global stock markets Wall Street site:reuters.com when:1d",
+        "Federal Reserve inflation oil site:reuters.com when:2d",
+        "Bitcoin Ethereum ETF site:coindesk.com OR site:reuters.com when:2d",
+        "US earnings premarket site:reuters.com when:1d",
+    ]
+    results: list[dict[str, Any]] = []
+    seen_titles: set[str] = set()
+    for query in queries:
+        url = (
+            "https://news.google.com/rss/search?"
+            f"q={quote_plus(query)}&hl=en-US&gl=US&ceid=US%3Aen"
+        )
+        try:
+            response = requests.get(
+                url,
+                timeout=12,
+                headers={"User-Agent": "Markedspuls/1.0"},
+            )
+            response.raise_for_status()
+            root = ET.fromstring(response.content)
+            for item in root.findall("./channel/item")[:4]:
+                title = re.sub(r"\s+", " ", item.findtext("title") or "").strip()
+                link = item.findtext("link")
+                source_node = item.find("source")
+                source = source_node.text if source_node is not None else None
+                normalized = re.sub(r"\s+-\s+[^-]+$", "", title).casefold()
+                if not title or not link or normalized in seen_titles:
+                    continue
+                seen_titles.add(normalized)
+                results.append(
+                    {
+                        "title": title,
+                        "url": link,
+                        "source": source or "Google News",
+                        "published_at": item.findtext("pubDate"),
+                        "topic": "Krydsmarked",
+                    }
+                )
+        except Exception as exc:
+            print(f"warning: trusted news feed: {exc}")
+    return results
 
 
 def get_spacex_headlines() -> list[dict[str, Any]]:
@@ -665,6 +749,76 @@ def make_discord_text(
     return "\n".join(sections)
 
 
+def make_dashboard(
+    markets: dict[str, Quote],
+    assessment: dict[str, Any],
+) -> dict[str, Any]:
+    call = {
+        "risk-on": "Risk-on med forbehold",
+        "risk-off": "Risk-off — kapitalbevarelse først",
+        "neutral": "Neutral med selektiv risikovægt",
+    }[assessment["regime"]]
+    facts = [
+        f"S&P 500-futures handler {move(markets.get('S&P futures'))}.",
+        f"Nasdaq 100-futures handler {move(markets.get('Nasdaq futures'))}.",
+        (
+            f"Den amerikanske 10-årige rente er {yield_move(markets.get('USA 10-årig'))}, "
+            f"mens VIX er {move(markets.get('VIX'))}."
+        ),
+        (
+            f"Bitcoin handler {move(markets.get('Bitcoin'))}, og WTI-olie handler "
+            f"{move(markets.get('WTI-olie'))}."
+        ),
+    ]
+    assessment_lines = list(assessment.get("drivers") or [])
+    if not assessment_lines:
+        assessment_lines = [market_reading(markets)]
+    assessment_lines.append(
+        "Signalet bør først opgraderes, når indeksbevægelse, renter og markedsbredde peger samme vej."
+    )
+
+    risks: list[str] = []
+    rate = markets.get("USA 10-årig")
+    if rate and rate.price is not None and rate.price >= 4.5:
+        risks.append("Høje lange renter kan fortsat presse højt værdisatte vækstaktier.")
+    else:
+        risks.append("Et nyt rentespring kan hurtigt ændre prisfastsættelsen af vækstaktier.")
+    nq = pct(markets, "Nasdaq futures")
+    if nq is not None and nq <= -0.35:
+        risks.append("Nasdaq-svagheden kan brede sig fra teknologi til det øvrige marked.")
+    else:
+        risks.append("Smal markedsbredde kan gøre en indeksfremgang skrøbelig.")
+    oil = pct(markets, "WTI-olie")
+    if oil is not None and abs(oil) >= 3:
+        risks.append("Den store oliebevægelse kan ændre inflations- og centralbankforventningerne.")
+    else:
+        risks.append("Geopolitik eller et nyt oliechok kan genåbne inflationsrisikoen.")
+
+    return {
+        "headline": call,
+        "lede": market_reading(markets),
+        "facts": facts,
+        "assessment": assessment_lines[:4],
+        "risks": risks[:3],
+        "investor_focus": (
+            "Følg især den amerikanske 10-årige rente, markedsbredden og om dagens "
+            "bevægelse bekræftes af både aktier og krypto. Brede, løbende investeringer "
+            "kan fortsættes disciplineret; undgå at jage et enkelt kursgab."
+        ),
+        "calendar": [],
+        "sources": [
+            {
+                "label": "Yahoo Finance markedsdata",
+                "url": "https://finance.yahoo.com/markets/",
+            },
+            {
+                "label": "Cboe VIX",
+                "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
+            },
+        ],
+    }
+
+
 def split_discord(text: str, limit: int = 1900) -> list[str]:
     chunks: list[str] = []
     current = ""
@@ -720,6 +874,7 @@ def main() -> None:
     markets["USA 10-årig"] = get_intraday_quote("^TNX", markets["USA 10-årig"])
     markets["VIX"] = get_official_vix(markets["VIX"])
     watchlist = get_quotes(WATCHLIST)
+    crypto_crosscheck = get_crypto_crosscheck()
     headlines = get_headlines()
     assessment = risk_assessment(markets)
     morning_changes = changes_since_morning(args.brief, now, markets)
@@ -746,10 +901,28 @@ def main() -> None:
         "changes_since_morning": morning_changes,
         "instruments": serialise_quotes(markets),
         "watchlist": serialise_quotes(watchlist),
+        "crosschecks": {
+            "crypto": crypto_crosscheck,
+            "vix": {
+                "source": "Cboe",
+                "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
+                "value": markets["VIX"].price,
+                "timestamp": markets["VIX"].timestamp,
+            },
+        },
         "headlines": headlines,
         "discord_text": text,
+        "dashboard": make_dashboard(markets, assessment),
+        "brief_engine": {
+            "mode": "rule-based-fallback",
+            "grounding": "Markedspuls markedsdata og kildefeed",
+        },
         "methodology": {
-            "facts": "Kurser og procentændringer hentes maskinelt via Yahoo Finance.",
+            "facts": (
+                "Kurser og procentændringer hentes maskinelt via Yahoo Finance. "
+                "VIX kontrolleres mod Cboe, og BTC/ETH krydstjekkes mod CoinGecko, "
+                "når kilden svarer."
+            ),
             "assessment": "Risk-regimet beregnes ud fra faste tærskler for futures, VIX, Bitcoin og olie.",
         },
     }
