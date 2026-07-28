@@ -1,8 +1,8 @@
 {
   "feed_version": 2,
   "status": "ok",
-  "updated_at": "2026-07-28T07:59:33.530477+00:00",
-  "updated_at_copenhagen": "2026-07-28T09:59:33.530477+02:00",
+  "updated_at": "2026-07-28T08:24:44.825552+00:00",
+  "updated_at_copenhagen": "2026-07-28T10:24:44.825552+02:00",
   "brief_type": "morning",
   "market_calendar": {
     "open": true,
@@ -22,26 +22,26 @@
     "S&P 500": {
       "symbol": "^GSPC",
       "price": 7413.18017578125,
-      "change_pct": 0.01619264104413265,
-      "previous_close": 7411.97998046875,
+      "change_pct": 0.06587707331529025,
+      "previous_close": 7408.2998046875,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Nasdaq": {
       "symbol": "^IXIC",
       "price": 24932.080078125,
-      "change_pct": -0.17513032135768603,
-      "previous_close": 24975.8203125,
+      "change_pct": -0.8179326719084723,
+      "previous_close": 25137.689453125,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Dow Jones": {
       "symbol": "^DJI",
       "price": 52210.078125,
-      "change_pct": 0.5059519512582433,
-      "previous_close": 51947.25,
+      "change_pct": 0.9638634670531054,
+      "previous_close": 51711.6484375,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "VIX": {
       "symbol": "^VIX",
@@ -53,43 +53,43 @@
     },
     "S&P futures": {
       "symbol": "ES=F",
-      "price": 7429.75,
-      "change_pct": -0.24838049206189483,
+      "price": 7425.75,
+      "change_pct": -0.30208438223743306,
       "previous_close": 7448.25,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Nasdaq futures": {
       "symbol": "NQ=F",
-      "price": 27910.75,
-      "change_pct": -0.9905995033699933,
+      "price": 27884.0,
+      "change_pct": -1.0854913089748175,
       "previous_close": 28190.0,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Dow futures": {
       "symbol": "YM=F",
-      "price": 52427.0,
-      "change_pct": 0.08590737276163996,
+      "price": 52416.0,
+      "change_pct": 0.06490779275323266,
       "previous_close": 52382.0,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
-      "price": 6292.509765625,
-      "change_pct": 0.1639519333410222,
+      "price": 6288.64990234375,
+      "change_pct": 0.10251076366905032,
       "previous_close": 6282.2099609375,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "DAX": {
       "symbol": "^GDAXI",
-      "price": 25492.630859375,
-      "change_pct": 0.5189125447531362,
+      "price": 25474.609375,
+      "change_pct": 0.4478527933367227,
       "previous_close": 25361.029296875,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Nikkei 225": {
       "symbol": "^N225",
@@ -97,15 +97,15 @@
       "change_pct": -3.9522908415368763,
       "previous_close": 64931.19140625,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Hang Seng": {
       "symbol": "^HSI",
-      "price": 25313.189453125,
-      "change_pct": 0.42055385385921795,
+      "price": 25310.849609375,
+      "change_pct": 0.4112714042595167,
       "previous_close": 25207.1796875,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Shanghai Composite": {
       "symbol": "000001.SS",
@@ -113,7 +113,7 @@
       "change_pct": -1.1645299496841566,
       "previous_close": 3858.2451171875,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "USA 10-årig": {
       "symbol": "^TNX",
@@ -121,55 +121,55 @@
       "change_pct": 0.0,
       "previous_close": 4.640999794006348,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.515765+00:00"
+      "timestamp": "2026-07-28T08:24:46.459127+00:00"
     },
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "price": 1.1368803977966309,
-      "change_pct": -0.22965235370646653,
+      "price": 1.1375269889831543,
+      "change_pct": -0.17290880566966926,
       "previous_close": 1.1394972801208496,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Dollarindeks": {
       "symbol": "DX-Y.NYB",
-      "price": 101.53700256347656,
-      "change_pct": 0.0660306908124575,
-      "previous_close": 101.47000122070312,
+      "price": 101.52400207519531,
+      "change_pct": 0.013791684238229074,
+      "previous_close": 101.51000213623047,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "WTI-olie": {
       "symbol": "CL=F",
-      "price": 81.4000015258789,
-      "change_pct": -1.4647125959723506,
+      "price": 80.55000305175781,
+      "change_pct": -2.493641863423035,
       "previous_close": 82.61000061035156,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Guld": {
       "symbol": "GC=F",
-      "price": 4047.5,
-      "change_pct": -0.6626579948459943,
+      "price": 4044.0,
+      "change_pct": -0.7485581052889878,
       "previous_close": 4074.5,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Bitcoin": {
       "symbol": "BTC-USD",
-      "price": 63428.8515625,
-      "change_pct": -0.4645701794101065,
+      "price": 63395.98828125,
+      "change_pct": -0.5161407304125953,
       "previous_close": 63724.8984375,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     },
     "Ethereum": {
       "symbol": "ETH-USD",
-      "price": 1881.6099853515625,
-      "change_pct": -0.4762231898876479,
-      "previous_close": 1890.613525390625,
+      "price": null,
+      "change_pct": null,
+      "previous_close": null,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:34.441660+00:00"
+      "timestamp": "2026-07-28T08:24:46.335910+00:00"
     }
   },
   "watchlist": {
@@ -179,7 +179,7 @@
       "change_pct": 1.1681024493330971,
       "previous_close": 333.0199890136719,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Microsoft": {
       "symbol": "MSFT",
@@ -187,7 +187,7 @@
       "change_pct": 1.938693649417722,
       "previous_close": 381.70001220703125,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Nvidia": {
       "symbol": "NVDA",
@@ -195,7 +195,7 @@
       "change_pct": -4.994199387907427,
       "previous_close": 206.83999633789062,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Amazon": {
       "symbol": "AMZN",
@@ -203,7 +203,7 @@
       "change_pct": -0.3101982761663957,
       "previous_close": 232.11000061035156,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Alphabet": {
       "symbol": "GOOGL",
@@ -211,7 +211,7 @@
       "change_pct": 2.1329854045531116,
       "previous_close": 319.739990234375,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Meta": {
       "symbol": "META",
@@ -219,7 +219,7 @@
       "change_pct": -0.2217791493143717,
       "previous_close": 595.1900024414062,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Tesla": {
       "symbol": "TSLA",
@@ -227,7 +227,7 @@
       "change_pct": -1.2171349626078465,
       "previous_close": 313.0299987792969,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Coinbase": {
       "symbol": "COIN",
@@ -235,7 +235,7 @@
       "change_pct": 5.812124958777942,
       "previous_close": 158.2899932861328,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Strategy": {
       "symbol": "MSTR",
@@ -243,7 +243,7 @@
       "change_pct": 7.614272386118781,
       "previous_close": 91.66999816894531,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "IonQ": {
       "symbol": "IONQ",
@@ -251,7 +251,7 @@
       "change_pct": 9.378800249837106,
       "previous_close": 32.84000015258789,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Quantum Computing": {
       "symbol": "QUBT",
@@ -259,7 +259,7 @@
       "change_pct": 7.133246595604015,
       "previous_close": 7.429999828338623,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "MP Materials": {
       "symbol": "MP",
@@ -267,7 +267,7 @@
       "change_pct": 4.430997251478241,
       "previous_close": 41.29999923706055,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "Rigetti": {
       "symbol": "RGTI",
@@ -275,7 +275,7 @@
       "change_pct": 10.53004074177666,
       "previous_close": 14.149999618530273,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "IREN": {
       "symbol": "IREN",
@@ -283,7 +283,7 @@
       "change_pct": -2.1041240510335957,
       "previous_close": 37.06999969482422,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     },
     "SpaceX": {
       "symbol": "SPCX",
@@ -291,7 +291,7 @@
       "change_pct": -1.3643866333431842,
       "previous_close": 115.06999969482422,
       "currency": null,
-      "timestamp": "2026-07-28T07:59:35.140400+00:00"
+      "timestamp": "2026-07-28T08:24:47.662664+00:00"
     }
   },
   "headlines": [
@@ -344,7 +344,7 @@
       "published_at": "2026-07-28T00:36:08Z"
     }
   ],
-  "discord_text": "# Morgenbrief — tirsdag 28.07.2026\n**Data kontrolleret 28.07.2026 kl. 09:59 CEST.**\n\n## Samlet signal: Neutral\nAmerikanske futures ligger tæt på uændret.\n\n## Seneste amerikanske lukning\n- **S&P 500:** 7.413,18 (+0,02%)\n- **Nasdaq Composite:** 24.932,08 (-0,18%)\n- **Dow Jones:** 52.210,08 (+0,51%)\n\n## Asien og amerikanske futures\n- **Nikkei 225:** 62.364,92 (-3,95%)\n- **Hang Seng:** 25.313,19 (+0,42%)\n- **Shanghai Composite:** 3.813,31 (-1,16%)\n- **S&P 500-futures:** 7.429,75 (-0,25%)\n- **Nasdaq 100-futures:** 27.910,75 (-0,99%)\n\n## Renter, VIX, olie og valuta\n- **10-årig Treasury:** 4,64% (+0,0 bp)\n- **VIX:** 18,67 (+0,48%)\n- **WTI:** 81,40 (-1,46%)\n- **EUR/USD:** 1,14 (-0,23%)\n\n## Krypto\n- **Bitcoin:** 63.428,85 (-0,46%)\n- **Ethereum:** 1.881,61 (-0,48%)\nDer er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.\n\n## Watchlist — seneste officielle lukning\nDisse er **ikke verificerede premarket-kurser**: RGTI +10.53% · IONQ +9.38% · MSTR +7.61% · QUBT +7.13% · COIN +5.81%\n\n## Udvalgte markedsoverskrifter\n• [Earnings live: LVMH sales grow as US luxury shoppers boost results](https://finance.yahoo.com/markets/live/earnings-live-lvmh-sales-grow-as-us-luxury-shoppers-boost-results-115207214.html) — Yahoo Finance\n\n## Forventning: **Neutral**\n**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er -1.\n**Vurdering:** Amerikanske futures ligger tæt på uændret.\n\n### Tre forhold at overvåge\n1. Om futuresbevægelsen holder efter den amerikanske åbning.\n2. Om olie og den 10-årige rente fortsætter i samme retning.\n3. Om markedsbredden bekræfter indeksbevægelsen.\n",
+  "discord_text": "# Morgenbrief — tirsdag 28.07.2026\n**Data kontrolleret 28.07.2026 kl. 10:24 CEST.**\n\n## Samlet signal: Neutral\nAmerikanske futures ligger tæt på uændret.\n\n## Seneste amerikanske lukning\n- **S&P 500:** 7.413,18 (+0,07%)\n- **Nasdaq Composite:** 24.932,08 (-0,82%)\n- **Dow Jones:** 52.210,08 (+0,96%)\n\n## Asien og amerikanske futures\n- **Nikkei 225:** 62.364,92 (-3,95%)\n- **Hang Seng:** 25.310,85 (+0,41%)\n- **Shanghai Composite:** 3.813,31 (-1,16%)\n- **S&P 500-futures:** 7.425,75 (-0,30%)\n- **Nasdaq 100-futures:** 27.884,00 (-1,09%)\n\n## Renter, VIX, olie og valuta\n- **10-årig Treasury:** 4,64% (+0,0 bp)\n- **VIX:** 18,67 (+0,48%)\n- **WTI:** 80,55 (-2,49%)\n- **EUR/USD:** 1,14 (-0,17%)\n\n## Krypto\n- **Bitcoin:** 63.395,99 (-0,52%)\n- **Ethereum:** n/a (n/a%)\nDer er ikke indlæst verificerede ETF-flow-, regulerings- eller likvidationsdata i denne nøglefri version.\n\n## Watchlist — seneste officielle lukning\nDisse er **ikke verificerede premarket-kurser**: RGTI +10.53% · IONQ +9.38% · MSTR +7.61% · QUBT +7.13% · COIN +5.81%\n\n## Udvalgte markedsoverskrifter\n• [Earnings live: LVMH sales grow as US luxury shoppers boost results](https://finance.yahoo.com/markets/live/earnings-live-lvmh-sales-grow-as-us-luxury-shoppers-boost-results-115207214.html) — Yahoo Finance\n\n## Forventning: **Neutral**\n**Fakta:** De viste markedsdata er maskinelt hentede. Den regelbaserede score er -1.\n**Vurdering:** Amerikanske futures ligger tæt på uændret.\n\n### Tre forhold at overvåge\n1. Om futuresbevægelsen holder efter den amerikanske åbning.\n2. Om olie og den 10-årige rente fortsætter i samme retning.\n3. Om markedsbredden bekræfter indeksbevægelsen.\n",
   "methodology": {
     "facts": "Kurser og procentændringer hentes maskinelt via Yahoo Finance.",
     "assessment": "Risk-regimet beregnes ud fra faste tærskler for futures, VIX, Bitcoin og olie."
