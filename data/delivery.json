@@ -1,13 +1,13 @@
 {
-  "brief_updated_at": "2026-07-28T21:31:27.285788+00:00",
+  "brief_updated_at": "2026-07-29T09:11:31.333937+00:00",
   "discord": {
     "status": "delivered",
-    "attempted_at": "2026-07-28T21:31:54.072596+00:00",
-    "delivered_at": "2026-07-28T21:31:54.072582+00:00",
+    "attempted_at": "2026-07-29T09:11:57.455771+00:00",
+    "delivered_at": "2026-07-29T09:11:57.455750+00:00",
     "messages": 2
   },
   "workflow": {
-    "run_id": "30400993483",
-    "run_url": "https://github.com/MPZeko/Markedspuls/actions/runs/30400993483"
+    "run_id": "30438592084",
+    "run_url": "https://github.com/MPZeko/Markedspuls/actions/runs/30438592084"
   }
 }
